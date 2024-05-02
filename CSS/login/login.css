@@ -92,9 +92,21 @@ form .submit:enabled {
     }
 }
 
+.options {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    top: 90%;
+    height: 25px;
+    align-items: center;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
 .options button {
     position: relative;
-    top: 2rem;
     color: red;
     background-color: transparent !important;
     border: none;
