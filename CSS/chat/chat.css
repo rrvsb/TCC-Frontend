@@ -15,12 +15,18 @@ body {
 }
 
 .options > .profilePic {
+    position: relative;
+    border-radius: 50%;
     margin-top: 0.5rem;
-    height: 10vh;
+    left: 0.5rem;
     align-items: center;
     text-align: center;
     justify-content: center;
-    width: 100%;
+    width: 10vh;
+    height: 10vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .options > .profilePic img {
@@ -69,7 +75,9 @@ body {
 }
 
 main {
-    position: absolute;
+    position: relative;
+    display: flex;
+    flex-direction: row;
     height: 100vh;
     width: 100%;
     left: 5rem;
@@ -78,7 +86,7 @@ main {
 main >.groups {
     position: relative;
     background-color: #6877721a;
-    width: 30%;
+    width: 27vw;
     height: 100vh;
     align-items: center;
     justify-content: center;
@@ -114,11 +122,16 @@ main > .groups > .groupsAndChats > .groupsList ul {
     background-color: #fff;
     cursor: pointer;
     padding: 5px;
-    max-width: 20rem;
-    width: 20rem;
-    min-height: 90px;
+    max-width: 95%;
+    width: 95%;
+    min-height: 130px;
     border-radius: 3px;
     list-style: none;
+    box-shadow: 3px 3px 3px 0px #0000001c;
+}
+
+main > .groups > .groupsAndChats > .groupsList ul:last-child {
+    margin-bottom: 20%;
 }
 
 main > .groups > .groupsAndChats > .groupsList ul li {
@@ -127,6 +140,7 @@ main > .groups > .groupsAndChats > .groupsList ul li {
     background-color: #6877721a;
     width: 100%;
     height: 100%;
+    text-align: start;
 }
 
 main > .groups > .groupsAndChats > .groupsList ul li > .infos {
@@ -150,33 +164,41 @@ main > .groups > .groupsAndChats > .groupsList ul li > .infos > .infosCard > .us
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
-}
-
-main > .groups > .groupsAndChats > .groupsList ul li > .infos > .infosCard > .userPic img{
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 main > .groups > .groupsAndChats > .groupsList ul li > .infos > .infosCard > .messagePreview {
-    position: relative;
+    position: absolute;
     display: flex;
-    width: 75%;
+    top: 6rem;
+    width: 95%;
     height: 3vh;
-    right: 0;
-    bottom: -4rem;
-    text-align: start;
-    justify-content: start;
+    align-content: center;
+    align-self: center;
+    left: 50%;
+    transform: translate(-50%);
+    justify-content: center;
     align-items: center;
-    left: 15px;
 }
 
 main > .groups > .groupsAndChats > .groupsList ul li > .infos > .infosCard > .messagePreview p {
-    background-color: #eaecec9a;
-    width: 95%;
+    width: 100%;
     white-space: nowrap; /* Impede que o texto seja quebrado em várias linhas */
     overflow: hidden; /* Oculta o conteúdo que excede a div */
     text-overflow: ellipsis; /* Substitui texto excedente por reticências */
+}
+
+#chatSelected {
+    background-color: black;
+    color: #fff;
+}
+
+#chatSelected li{
+    background-color: rgb(24, 24, 24);
+    border: 5px 5px 5px 5px blue;
 }
 
 main > .groups > .groupsAndChats > .groupsList ul li > .infos > .infosCard > .userInfos {
@@ -199,69 +221,88 @@ main > .groups > .groupsAndChats > .groupsList ul li > .infos > .infosCard > .us
     font-size: 15px;
 }
 
-main > .chat {
+main > .groups > .groupsAndChats > .groupsList ul li > .infos > .infosCard > .userInfos > .lastMessageHour{
     position: absolute;
-    max-width: 70%;
-    width: 69.2%;
-    height: 100vh;
-    top: 0;
+    top: -2.5px;
+    font-size: 15px;
+    left: 13rem;
+}
+
+main > .chat {
+    position: relative;
     right: 0;
+    top: 0; 
+    width: 55%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    overflow-y: scroll;
 }
 
 main > .chat > .messages {
-    position: relative;
+    position: absolute;
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
-    height: 85%;
-    overflow-y: auto;
-    padding: 15px;
-    align-items: start;
-    justify-content: start;
-    text-align: center;
+    height: 78%;
+    top: 0;
+    overflow-y: scroll;
 }
 
 main > .chat > .messages > .message {
-    margin-top: 15px;
     position: relative;
-    width: 90%;
-    min-height: 5rem;
-    background-color: var(--Main-Color-Dark);
-    border-radius: 5px;
-}
-
-main > .chat > .messages > .message > .profileInChatPic {
-    position: absolute;
-    height: 100%;
-    width: 6rem;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: end;
+    width: 90%;
+    height: auto; /* Alterado de height para min-height */
+    left: auto;
+    right: auto;
+    background-color: var(--Main-Color-Light);
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    border-radius: 5px;
+    padding: 0.5%;
+    text-align: justify;
 }
 
-main > .chat > .messages > .message > .profileInChatPic img {
-    position: absolute;
-    height: 85%;
-    width: 80%;
-    border-radius: 5%;
-    background-color: transparent;
+main > .chat > .messages > .message.expanded {
+    min-height: 55vh;
 }
 
-main > .chat > .messages > .message > .content {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 85%;
-    height: 100%;
-    text-align: start;
-    padding-left: 5px;
-    word-wrap: break-word;
-}
-
-main > .chat > .messages > .message > .content p{
+main > .chat > .messages > .message > .userInChatInfos {
     position: relative;
-    top: -15px;
+    display: flex;
+    width: 10rem;
+    flex-direction: row;
+    z-index: 10;
+}
+
+main > .chat > .messages > .message > .userInChatInfos > .profileInChatPic {
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+main > .chat > .messages > .message > .userInChatInfos > .userInChatName {
+    position: relative;
+    color: #4b474a;
+    top: -0.5rem;
+    left: 0.5rem;
+}
+
+main > .chat > .messages > .message > .content{
+    position: relative;
+    z-index: 11;
+    left: -3.5rem;
+    width: 90%;
+    top: 1rem;
+    word-wrap: break-word;
 }
 
 main > .chat > .input{
@@ -269,56 +310,53 @@ main > .chat > .input{
     display: flex;
     width: 100%;
     height: 7.5vh;
-    bottom: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 5px;
+    bottom: 7rem;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    padding: 5px;
 }
 
 #myMessage {
-    background-color: rgb(14, 223, 14);
+    height: auto;
+    background-color: var(--Main-Color-Dark);
 }
-#myMessage > .profileInChatPic {
+
+#myMessage .userInChatInfos {
     position: absolute;
-    height: 100%;
-    width: 6rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: end;
     right: 0;
+    z-index: 10;
+    text-align: end;
 }
+
+#myMessage .userInChatInfos > .profileInChatPic {
+    position: absolute;
+    right: 0;
+
+}
+
+#myMessage .userInChatInfos > .userInChatName {
+    position: absolute;
+    right: 5rem;
+
+}
+
 
 #myMessage > .content {
-    position: absolute;
-    right: 7rem;
-    bottom: 0;
-    width: 85%;
-    height: 100%;
+    position: relative;
+    left: 0.5rem;
     text-align: end;
-    padding-left: 5px;
-    word-wrap: break-word;
+    text-align: justify;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*chat imput css*/
 .messageBox {
     position: absolute;
     left: 15px;
-    width: 85%;
+    width: 80%;
     height: 40px;
     display: flex;
     align-items: center;
