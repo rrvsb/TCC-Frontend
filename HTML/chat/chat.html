@@ -14,7 +14,8 @@
 
 <body>
     <nav class="options">
-        <div class="profilePic" style="background-image: url(https://i.etsystatic.com/39938216/r/il/430cba/4488972880/il_fullxfull.4488972880_3h3k.jpg);">
+        <div class="profilePic"
+            style="background-image: url(https://i.etsystatic.com/39938216/r/il/430cba/4488972880/il_fullxfull.4488972880_3h3k.jpg);">
         </div><!--fechamento profilePic-->
 
         <div class="pagesOptions">
@@ -64,7 +65,7 @@
 
             <div class="groupsAndChats">
                 <div class="groupsList">
-                    <ul>
+                    <ul class="contact" room="room0">
                         <li>
                             <div class="infos">
 
@@ -91,7 +92,7 @@
 
                     </ul>
 
-                    <ul id="chatSelected">
+                    <ul class="contact" id="chatSelected" room="room1">
                         <li>
                             <div class="infos">
 
@@ -118,7 +119,7 @@
 
                     </ul>
 
-                    <ul>
+                    <ul class="contact">
                         <li>
                             <div class="infos">
 
@@ -145,7 +146,7 @@
 
                     </ul>
 
-                    
+
 
                 </div><!--fechamento groupsList-->
             </div><!--fechamento groupsAndChats-->
@@ -155,93 +156,51 @@
 
 
             <div class="messages">
-
-                <div class="message">
-                    <div class="userInChatInfos">
-                        <div class="profileInChatPic"
-                            style="background-image: url(https://wallpapers.com/images/hd/cool-profile-picture-87h46gcobjl5e4xu.jpg);">
-                        </div>
-                        <p class="userInChatName">Quantxz</p>
-                    </div>
-
-                    <div class="content">
-                        <p>Sei la carai só pra testar o css</p>
-                    </div>
-                </div><!--fechamento message-->
-
-                <div class="message">
-                    <div class="userInChatInfos">
-                        <div class="profileInChatPic"
-                            style="background-image: url(https://wallpapers.com/images/hd/cool-profile-picture-87h46gcobjl5e4xu.jpg);">
-                        </div>
-                        <p class="userInChatName">Quantxz</p>
-                    </div>
-                    <div class="content">
-                        <p>Sei la carai só pra testar o css</p>
-                    </div>
-                </div><!--fechamento message-->
-
-                <div class="message">
-                    <div class="userInChatInfos">
-                        <div class="profileInChatPic"
-                            style="background-image: url(https://wallpapers.com/images/hd/cool-profile-picture-87h46gcobjl5e4xu.jpg);">
-                        </div>
-                        <p class="userInChatName">Quantxz</p>
-                    </div>
-
-                    <div class="content">
-                        <p>nunc dictum. Morbi fermentum eget nisi et consectetur. Suspendisse non libero sit amet neque ullamcorper aliquam. Nulla rutrum felis at velit elementum, eget bibendum dolor cursus. Donec auctor dolor arcu, ac vehicula lorem aliquet ac. Integer ut tellus orci. Donec at ipsum at purus bibendum feugiat a nec turpis. Cras non venenatis nisl. Morbi tempor diam ac eros luctus, eget venenatis leo hendrerit. Integer tempor mi eget purus scelerisque lacinia. In hac habitasse platea dictumst.</p>
-                    </div>
-                </div><!--fechamento message-->
-
-                <div class="message" id="myMessage">
-                    <div class="userInChatInfos">
-                        <div class="profileInChatPic"
-                            style="background-image: url(https://i.etsystatic.com/39938216/r/il/430cba/4488972880/il_fullxfull.4488972880_3h3k.jpg);">
-                        </div>
-                        <p class="userInChatName">Me</p>
-                    </div>
-
-                    <div class="content">
-                        <p>aliquet quam quis mi consequat, non viverra nulla cursus. Integer consectetur feugiat mi eget eleifend. Maecenas ut tellus ac purus ullamcorper aliquam non quis sem. Aenean eu mauris ac risus facilisis hendrerit. Sed vulputate, justo sed aliquet scelerisque, lorem mi pellentesque arcu, in tristique turpis libero eu velit. Phasellus sed ligula nec neque ultricies consequat. Sed malesuada, leo vel vehicula suscipit, odio quam auctor purus, eget feugiat mi velit et erat.</p>
-                    </div>
-                </div>
-
             </div>
+            
+            <form class="chatForm">
 
-            <div class="input">
-                <div class="messageBox">
-                    <div class="fileUploadWrapper">
-                        <label for="file">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 337 337">
-                                <circle stroke-width="20" stroke="#6c6c6c" fill="none" r="158.5" cy="168.5" cx="168.5">
-                                </circle>
-                                <path stroke-linecap="round" stroke-width="25" stroke="#6c6c6c" d="M167.759 79V259">
+                <div class="input" id="divForm">
+                    <div class="messageBox">
+                        <div class="fileUploadWrapper">
+                            <label for="file">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 337 337">
+                                    <circle stroke-width="20" stroke="#6c6c6c" fill="none" r="158.5" cy="168.5"
+                                        cx="168.5">
+                                    </circle>
+                                    <path stroke-linecap="round" stroke-width="25" stroke="#6c6c6c" d="M167.759 79V259">
+                                    </path>
+                                    <path stroke-linecap="round" stroke-width="25" stroke="#6c6c6c" d="M79 167.138H259">
+                                    </path>
+                                </svg>
+                                <span class="tooltip">Add an image</span>
+                            </label>
+                            <input type="file" id="file" name="file" />
+                        </div>
+                        <input required="" placeholder="Menssagem..." type="text" id="messageInput" maxlength="500" />
+                        <button id="sendButton" type="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 664 663">
+                                <path fill="none"
+                                    d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888">
                                 </path>
-                                <path stroke-linecap="round" stroke-width="25" stroke="#6c6c6c" d="M79 167.138H259">
+                                <path stroke-linejoin="round" stroke-linecap="round" stroke-width="33.67"
+                                    stroke="#6c6c6c"
+                                    d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888">
                                 </path>
                             </svg>
-                            <span class="tooltip">Add an image</span>
-                        </label>
-                        <input type="file" id="file" name="file" />
+                        </button>
                     </div>
-                    <input required="" placeholder="Menssagem..." type="text" id="messageInput" maxlength="500" />
-                    <button id="sendButton">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 664 663">
-                            <path fill="none"
-                                d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888">
-                            </path>
-                            <path stroke-linejoin="round" stroke-linecap="round" stroke-width="33.67" stroke="#6c6c6c"
-                                d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888">
-                            </path>
-                        </svg>
-                    </button>
-                </div>
 
-            </div>
+                </div>
+            </form>
         </section>
     </main>
-    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js" integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO" crossorigin="anonymous"></script>
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"
+        integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO"
+        crossorigin="anonymous"></script>
+    <script src="../../js/chat/chat.js"></script>
+
     <script src="../../js/chat/style.js"></script>
 </body>
+
 </html>
