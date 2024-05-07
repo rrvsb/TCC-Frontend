@@ -309,6 +309,7 @@ main > .chat > .input{
     position: absolute;
     display: flex;
     width: 100%;
+    top: 91vh;
     height: 7.5vh;
     background-repeat: no-repeat;
     background-size: cover;
