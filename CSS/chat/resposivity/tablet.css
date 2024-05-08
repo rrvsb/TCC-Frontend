@@ -1,0 +1,106 @@
+@media (max-width: 885px) and (max-height: 1280px){
+    .options {
+        position: relative;
+        display: flex;
+        height: 6vh;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row !important;
+        width: 35vw;
+        top: 94%;
+        left: 0;
+    }
+
+    .options > .profilePic {
+        display: none;
+    }
+
+    .options > .pagesOptions {
+        position: relative;
+        display: flex;
+        flex-direction: row !important;
+        align-items: center;
+        justify-content: center;
+        width: 30vw;
+        height: 5vh;
+        padding: 0;
+    }
+
+    .options > .pagesOptions ul {
+        position: relative;
+        display: flex;
+        flex-direction: row !important;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        height: 5vh;
+    }
+
+    .options > .pagesOptions ul li{
+        position: relative;
+        display: flex;
+        top: -0.99rem;
+        left: -2rem;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding-left: 25px;
+    }
+
+    .options > .configs{
+        position: relative;
+        height: 100%;
+        left: -2rem;
+    }
+
+    main {
+        position: absolute;
+        width: 100vw;
+        left: 0;
+    }
+
+    main > .groups {
+        width: 40vw;
+    }
+
+    main > .groups > .searchBar {
+        height: 5vh;
+        box-shadow: 0px 1px 10px 0px #000;
+    }
+
+
+    main > .groups > .groupsAndChats > .groupsList {
+        position: relative;
+        top: 1rem;
+        height: 85.5vh;
+        overflow-y: scroll;
+    }
+
+
+    main > .groups > .groupsAndChats > .groupsList > .contact > li > .infos > .infosCard > .userInfos {
+        position: relative;
+        left: 1rem;
+    }
+
+    main > .groups > .groupsAndChats > .groupsList > .contact > li > .infos > .infosCard > .userInfos > .lastMessageHour {
+        position: relative;
+        left: 8rem;
+    }
+
+    main > .chat > .chatForm > .input {
+        top: 3rem;
+        width: 70vw;
+    }
+
+    main > .chat > .chatForm > .input > .messageBox > #messageInput{
+        position: relative;
+        left: 0.7rem;
+    }
+
+    main > .chat > .chatForm > .input > .messageBox > #sendButton{
+        position: relative;
+        left: 1rem;
+    }
+
+}
