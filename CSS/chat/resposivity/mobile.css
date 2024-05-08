@@ -13,13 +13,15 @@
 
     .menuMobileButton {
         display: flex;
-        z-index: 10;
         height: 8vh;
     }
 
+
     .menuMobileButton > .hamburger {
         display: flex;
+        z-index: 10;    
     }
+
 
     .menuMobileButton > .hamburger input:checked ~ .options{
         position: absolute;
@@ -28,9 +30,25 @@
     }
 
     .menuMobileButton > .hamburger input:checked ~ .groups {
-        background-color: #fff;
+        position: absolute;
+        background-color: #ffffff;
+        right: 0;
+        width: 77vw;
         display: flex;
     }
+
+    .menuMobileButton > .hamburger input:checked ~ .groups > .searchBar {
+        display: flex;
+        z-index: 100;
+    }
+
+    .options > .profilePic {
+        display: none;
+    }
+
+    .lastMessageHour {
+        left: 9rem !important;
+    }   
 
     main > .chat {
         position: absolute;
@@ -71,27 +89,36 @@
         padding: 5px;
     }
 
-    .menuMobileButton > .hamburger > .groups >.searchBar {
+    .menuMobileButton > .hamburger > .groups > .searchBar {
         display: flex;
-        position: relative;
+        padding: 1vh;
+        position: absolute;
         align-items: center;
         justify-content: center;
         text-align: center;
         align-content: center;
         height: 8vh;
+        width: 70vw;
+        top: 0;
     }
 
     .menuMobileButton > .hamburger > .groups >.groupsAndChats {
+        position: absolute;
         width: 100%;
-        height: 100%;
+        height: 95%;
+        bottom: 0 !important;
     }
 
     .menuMobileButton > .hamburger > .groups >.groupsAndChats>.groupsList {
+        position: absolute;
         display: flex;
         flex-direction: column;
         overflow: auto;
-        height: 100%;
+        width: 100%;
+        height: 90%;
+        bottom: 0;
         align-items: center;
+        left: 0;
     }
 
     .menuMobileButton > .hamburger > .groups >.groupsAndChats>.groupsList ul {
@@ -99,11 +126,11 @@
         cursor: pointer;
         padding: 5px;
         max-width: 95%;
-        width: 95%;
+        width: 90%;
         min-height: 130px;
         border-radius: 3px;
         list-style: none;
-        box-shadow: 3px 3px 3px 0px #0000001c;
+        box-shadow: 3px 3px 3px 10px #0000001c !important;
     }
 
     .menuMobileButton > .hamburger > .groups >.groupsAndChats>.groupsList ul:last-child {
@@ -204,8 +231,135 @@
         position: absolute;
         top: -2.5px;
         font-size: 15px;
-        left: 13rem;
+        left: 5rem;
     }
 
+    
+.form {
+    --input-bg: #FFf;
+    /*  background of input */
+    --padding: 1.5em;
+    --rotate: 80deg;
+    /*  rotation degree of input*/
+    --gap: 2em;
+    /*  gap of items in input */
+    --icon-change-color: #15A986;
+    /*  when rotating changed icon color */
+    --height: 40px;
+    /*  height */
+    width: 90%;
+    padding-inline-end: 1em;
+    /*  change this for padding in the end of input */
+    background: var(--input-bg);
+    position: relative;
+    border-radius: 4px;
+    z-index: 100;
+}
+
+.form label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: var(--height);
+}
+
+.form input {
+    width: 100%;
+    padding-inline-start: calc(var(--padding) + var(--gap));
+    outline: none;
+    background: none;
+    border: 0;
+}
+
+/* style for both icons -- search,close */
+.form svg {
+    /* display: block; */
+    color: #111;
+    transition: 0.3s cubic-bezier(.4, 0, .2, 1);
+    position: absolute;
+    height: 15px;
+}
+
+/* search icon */
+.icon {
+    position: absolute;
+    left: var(--padding);
+    transition: 0.3s cubic-bezier(.4, 0, .2, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* arrow-icon*/
+.swap-off {
+    transform: rotate(-80deg);
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* close button */
+.close-btn {
+    /* removing default bg of button */
+    background: none;
+    border: none;
+    right: calc(var(--padding) - var(--gap));
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #111;
+    padding: 0.1em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transition: 0.3s;
+    opacity: 0;
+    transform: scale(0);
+    visibility: hidden;
+}
+
+.form input {
+    position: absolute !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.form input:focus~.icon {
+    transform: rotate(var(--rotate)) scale(1.3);
+}
+
+.form input:focus~.icon .swap-off {
+    opacity: 1;
+    transform: rotate(-80deg);
+    visibility: visible;
+    color: var(--icon-change-color);
+}
+
+.form input:focus~.icon .swap-on {
+    opacity: 0;
+    visibility: visible;
+}
+
+.form input:valid~.icon {
+    transform: scale(1.3) rotate(var(--rotate))
+}
+
+.form input:valid~.icon .swap-off {
+    opacity: 1;
+    visibility: visible;
+    color: var(--icon-change-color);
+}
+
+.form input:valid~.icon .swap-on {
+    opacity: 0;
+    visibility: visible;
+}
+
+.form input:valid~.close-btn {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transition: 0s;
+}
 
 }
