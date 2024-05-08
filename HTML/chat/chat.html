@@ -7,6 +7,7 @@
     <title>CodeSavvy chat</title>
     <link rel="stylesheet" href="../../CSS/chat/chat.css">
     <link rel="stylesheet" href="../../CSS/chat/resposivity/tablet.css">
+    <link rel="stylesheet" href="../../CSS/chat/resposivity/mobile.css">
     <link rel="stylesheet" href="../../CSS/style.css">
 
     <!--Bootstrap Icons-->
@@ -14,7 +15,46 @@
 </head>
 
 <body>
+    <div class="menuOptions">
+        <div class="button-container">
+            <button class="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1024 1024"
+                    stroke-width="0" fill="currentColor" stroke="currentColor" class="icon">
+                    <path
+                        d="M946.5 505L560.1 118.8l-25.9-25.9a31.5 31.5 0 0 0-44.4 0L77.5 505a63.9 63.9 0 0 0-18.8 46c.4 35.2 29.7 63.3 64.9 63.3h42.5V940h691.8V614.3h43.4c17.1 0 33.2-6.7 45.3-18.8a63.6 63.6 0 0 0 18.7-45.3c0-17-6.7-33.1-18.8-45.2zM568 868H456V664h112v204zm217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z">
+                    </path>
+                </svg>
+            </button>
+            <button class="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" aria-hidden="true" viewBox="0 0 24 24"
+                    stroke-width="2" fill="none" stroke="currentColor" class="icon">
+                    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linejoin="round"
+                        stroke-linecap="round"></path>
+                </svg>
+            </button>
+            <button class="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="0"
+                    fill="currentColor" stroke="currentColor" class="icon">
+                    <path
+                        d="M12 2.5a5.5 5.5 0 0 1 3.096 10.047 9.005 9.005 0 0 1 5.9 8.181.75.75 0 1 1-1.499.044 7.5 7.5 0 0 0-14.993 0 .75.75 0 0 1-1.5-.045 9.005 9.005 0 0 1 5.9-8.18A5.5 5.5 0 0 1 12 2.5ZM8 8a4 4 0 1 0 8 0 4 4 0 0 0-8 0Z">
+                    </path>
+                </svg>
+            </button>
+
+            <button class="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" stroke-linejoin="round"
+                    stroke-linecap="round" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor"
+                    class="icon">
+                    <circle r="1" cy="21" cx="9"></circle>
+                    <circle r="1" cy="21" cx="20"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
     <nav class="options">
+
+
         <div class="profilePic"
             style="background-image: url(https://i.etsystatic.com/39938216/r/il/430cba/4488972880/il_fullxfull.4488972880_3h3k.jpg);">
         </div><!--fechamento profilePic-->
@@ -34,7 +74,157 @@
     </nav><!--fechamento options-->
 
     <main>
+        <div class="menuMobileButton">
+            <label class="hamburger">
+                <input type="checkbox">
+                <svg viewBox="0 0 32 32">
+                    <path class="line line-top-bottom"
+                        d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22">
+                    </path>
+                    <path class="line" d="M7 16 27 16"></path>
+                </svg>
 
+                <nav class="options">
+
+
+                    <div class="profilePic"
+                        style="background-image: url(https://i.etsystatic.com/39938216/r/il/430cba/4488972880/il_fullxfull.4488972880_3h3k.jpg);">
+                    </div><!--fechamento profilePic-->
+            
+                    <div class="pagesOptions">
+                        <ul>
+                            <li><i class="bi bi-house-door-fill"></i></li>
+                            <li><i class="bi bi-person-circle"></i></li>
+                            <li><i class="bi bi-people"></i></li>
+                            <li><i class="bi bi-bell-fill"></i></li>
+                        </ul>
+                    </div>
+            
+                    <div class="configs">
+                        <i class="bi bi-three-dots"></i>
+                    </div>
+                </nav>
+                <section class="groups">
+
+                    <div class="searchBar">
+                        <form class="form">
+                            <label for="search">
+                                <input required="" autocomplete="off" placeholder="search your chats" id="search" type="text">
+                                <div class="icon">
+                                    <svg stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" class="swap-on">
+                                        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linejoin="round"
+                                            stroke-linecap="round"></path>
+                                    </svg>
+                                    <svg stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" class="swap-off">
+                                        <path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linejoin="round" stroke-linecap="round">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <button type="reset" class="close-btn">
+                                    <svg viewBox="0 0 20 20" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg">
+                                        <path clip-rule="evenodd"
+                                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                            fill-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                            </label>
+                        </form>
+                    </div>
+        
+                    <div class="groupsAndChats">
+        
+                        <div class="groupsList">
+                            <ul class="contact" room="room0">
+                                <li>
+                                    <div class="infos">
+        
+                                        <div class="infosCard">
+                                            <div class="userPic"
+                                                style="background-image: url(https://w0.peakpx.com/wallpaper/979/89/HD-wallpaper-purple-smile-design-eye-smily-profile-pic-face.jpg);">
+                                            </div>
+        
+                                            <div class="userInfos">
+                                                <h1 class="userNickname">Zezin</h1>
+                                                <p class="userStatus">offline</p>
+                                                <p class="lastMessageHour">17:55</p>
+                                            </div>
+        
+                                            <div class="messagePreview">
+                                                <p class="lastMessage">Iae carai como c ta?</p>
+                                            </div>
+                                        </div>
+        
+        
+                                    </div>
+        
+                                </li>
+        
+                            </ul>
+        
+        
+                            <ul class="contact" id="chatSelected" room="room1">
+                                <li>
+                                    <div class="infos">
+        
+                                        <div class="infosCard">
+                                            <div class="userPic"
+                                                style="background-image: url(https://wallpapers.com/images/hd/cool-profile-picture-87h46gcobjl5e4xu.jpg);">
+                                            </div>
+        
+                                            <div class="userInfos">
+                                                <h1 class="userNickname">Quantxz</h1>
+                                                <p class="userStatus">online</p>
+                                                <p class="lastMessageHour">18:03</p>
+                                            </div>
+        
+                                            <div class="messagePreview">
+                                                <p class="lastMessage">Viado, é foda ter criatividade pra criar esses textos</p>
+                                            </div>
+                                        </div>
+        
+        
+                                    </div>
+        
+                                </li>
+        
+                            </ul>
+        
+                            <ul class="contact">
+                                <li>
+                                    <div class="infos">
+        
+                                        <div class="infosCard">
+                                            <div class="userPic"
+                                                style="background-image: url(https://www.perfocal.com/blog/content/images/size/w960/2021/01/Perfocal_17-11-2019_TYWFAQ_100_standard-3.jpg);">
+                                            </div>
+        
+                                            <div class="userInfos">
+                                                <h1 class="userNickname">Joselina</h1>
+                                                <p class="userStatus">offline</p>
+                                                <p class="lastMessageHour">19:02</p>
+                                            </div>
+        
+                                            <div class="messagePreview">
+                                                <p class="lastMessage">Iae carai como c ta?</p>
+                                            </div>
+                                        </div>
+        
+        
+                                    </div>
+        
+                                </li>
+        
+                            </ul>
+        
+        
+        
+                        </div><!--fechamento groupsList-->
+                    </div><!--fechamento groupsAndChats-->
+                </section><!--fechamento groups-->
+            </label>
+        </div>
         <section class="groups">
 
             <div class="searchBar">
@@ -65,6 +255,7 @@
             </div>
 
             <div class="groupsAndChats">
+
                 <div class="groupsList">
                     <ul class="contact" room="room0">
                         <li>

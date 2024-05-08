@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
     font-family: "Poppins", sans-serif;
 }
@@ -14,7 +15,7 @@ body {
     height: 100vh;
 }
 
-.options > .profilePic {
+.options>.profilePic {
     position: relative;
     border-radius: 50%;
     margin-top: 0.5rem;
@@ -29,12 +30,12 @@ body {
     background-position: center;
 }
 
-.options > .profilePic img {
+.options>.profilePic img {
     border-radius: 50%;
     width: 60%;
 }
 
-.options > .pagesOptions {
+.options>.pagesOptions {
     display: flex;
     flex-direction: column;
     top: 15%;
@@ -45,20 +46,20 @@ body {
     text-align: center;
 }
 
-.options > .pagesOptions ul {
+.options>.pagesOptions ul {
     position: absolute;
     left: -1rem;
     font-size: 25px;
     list-style: none;
 }
 
-.options > .pagesOptions ul li {
+.options>.pagesOptions ul li {
     padding-top: 2rem;
     cursor: pointer;
     color: rgba(32, 32, 32, 0.822);
 }
 
-.options > .configs {
+.options>.configs {
     height: 5rem;
     align-items: center;
     justify-content: center;
@@ -66,7 +67,7 @@ body {
     align-content: center;
 }
 
-.options > .configs > .bi-three-dots {
+.options>.configs>.bi-three-dots {
     position: relative;
     font-size: 35px;
     top: 10%;
@@ -83,7 +84,7 @@ main {
     left: 5rem;
 }
 
-main >.groups {
+main>.groups {
     position: relative;
     background-color: #6877721a;
     width: 27vw;
@@ -95,7 +96,7 @@ main >.groups {
     padding: 5px;
 }
 
-main > .groups > .searchBar {
+main>.groups>.searchBar {
     display: flex;
     position: relative;
     align-items: center;
@@ -105,12 +106,12 @@ main > .groups > .searchBar {
     height: 8vh;
 }
 
-main > .groups > .groupsAndChats {
+main>.groups>.groupsAndChats {
     width: 100%;
     height: 100%;
 }
 
-main > .groups > .groupsAndChats > .groupsList {
+main>.groups>.groupsAndChats>.groupsList {
     display: flex;
     flex-direction: column;
     overflow: auto;
@@ -118,7 +119,7 @@ main > .groups > .groupsAndChats > .groupsList {
     align-items: center;
 }
 
-main > .groups > .groupsAndChats > .groupsList ul {
+main>.groups>.groupsAndChats>.groupsList ul {
     background-color: #fff;
     cursor: pointer;
     padding: 5px;
@@ -130,11 +131,11 @@ main > .groups > .groupsAndChats > .groupsList ul {
     box-shadow: 3px 3px 3px 0px #0000001c;
 }
 
-main > .groups > .groupsAndChats > .groupsList ul:last-child {
+main>.groups>.groupsAndChats>.groupsList ul:last-child {
     margin-bottom: 20%;
 }
 
-main > .groups > .groupsAndChats > .groupsList ul li {
+main>.groups>.groupsAndChats>.groupsList ul li {
     display: flex;
     flex-direction: column;
     background-color: #6877721a;
@@ -143,34 +144,34 @@ main > .groups > .groupsAndChats > .groupsList ul li {
     text-align: start;
 }
 
-main > .groups > .groupsAndChats > .groupsList ul li > .infos {
+main>.groups>.groupsAndChats>.groupsList ul li>.infos {
     width: 100%;
     z-index: 10;
     height: 100%;
     right: 0;
 }
 
-main > .groups > .groupsAndChats > .groupsList ul li > .infos > .infosCard {
+main>.groups>.groupsAndChats>.groupsList ul li>.infos>.infosCard {
     position: relative;
     display: flex;
     width: 100%;
     height: 80%;
 }
 
-main > .groups > .groupsAndChats > .groupsList ul li > .infos > .infosCard > .userPic  {
+main>.groups>.groupsAndChats>.groupsList ul li>.infos>.infosCard>.userPic {
     position: relative;
     top: 5px;
     left: 5px;
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
-    
+
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
-main > .groups > .groupsAndChats > .groupsList ul li > .infos > .infosCard > .messagePreview {
+main>.groups>.groupsAndChats>.groupsList ul li>.infos>.infosCard>.messagePreview {
     position: absolute;
     display: flex;
     top: 6rem;
@@ -184,11 +185,14 @@ main > .groups > .groupsAndChats > .groupsList ul li > .infos > .infosCard > .me
     align-items: center;
 }
 
-main > .groups > .groupsAndChats > .groupsList ul li > .infos > .infosCard > .messagePreview p {
+main>.groups>.groupsAndChats>.groupsList ul li>.infos>.infosCard>.messagePreview p {
     width: 100%;
-    white-space: nowrap; /* Impede que o texto seja quebrado em várias linhas */
-    overflow: hidden; /* Oculta o conteúdo que excede a div */
-    text-overflow: ellipsis; /* Substitui texto excedente por reticências */
+    white-space: nowrap;
+    /* Impede que o texto seja quebrado em várias linhas */
+    overflow: hidden;
+    /* Oculta o conteúdo que excede a div */
+    text-overflow: ellipsis;
+    /* Substitui texto excedente por reticências */
 }
 
 #chatSelected {
@@ -196,12 +200,12 @@ main > .groups > .groupsAndChats > .groupsList ul li > .infos > .infosCard > .me
     color: #fff;
 }
 
-#chatSelected li{
+#chatSelected li {
     background-color: rgb(24, 24, 24);
     border: 5px 5px 5px 5px blue;
 }
 
-main > .groups > .groupsAndChats > .groupsList ul li > .infos > .infosCard > .userInfos {
+main>.groups>.groupsAndChats>.groupsList ul li>.infos>.infosCard>.userInfos {
     position: absolute;
     width: 75%;
     height: 10vh;
@@ -210,28 +214,28 @@ main > .groups > .groupsAndChats > .groupsList ul li > .infos > .infosCard > .us
     flex-direction: column;
 }
 
-main > .groups > .groupsAndChats > .groupsList ul li > .infos > .infosCard > .userInfos h1{
+main>.groups>.groupsAndChats>.groupsList ul li>.infos>.infosCard>.userInfos h1 {
     position: absolute;
     font-size: 20px;
 }
 
-main > .groups > .groupsAndChats > .groupsList ul li > .infos > .infosCard > .userInfos p{
+main>.groups>.groupsAndChats>.groupsList ul li>.infos>.infosCard>.userInfos p {
     position: absolute;
     top: 25px;
     font-size: 15px;
 }
 
-main > .groups > .groupsAndChats > .groupsList ul li > .infos > .infosCard > .userInfos > .lastMessageHour{
+main>.groups>.groupsAndChats>.groupsList ul li>.infos>.infosCard>.userInfos>.lastMessageHour {
     position: absolute;
     top: -2.5px;
     font-size: 15px;
     left: 13rem;
 }
 
-main > .chat {
+main>.chat {
     position: relative;
     right: 0;
-    top: 0; 
+    top: 0;
     width: 55%;
     height: 100vh;
     display: flex;
@@ -240,7 +244,7 @@ main > .chat {
     padding: 5%;
 }
 
-main > .chat > .messages {
+main>.chat>.messages {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -251,15 +255,16 @@ main > .chat > .messages {
     overflow-y: scroll;
 }
 
-main > .chat > .messages:first-child {
+main>.chat>.messages:first-child {
     top: 2.5%;
 }
 
-main > .chat > .messages > .message {
+main>.chat>.messages>.message {
     position: relative;
     display: flex;
     width: 90%;
-    height: auto; /* Alterado de height para min-height */
+    height: auto;
+    /* Alterado de height para min-height */
     left: auto;
     right: auto;
     background-color: var(--Main-Color-Light);
@@ -270,11 +275,11 @@ main > .chat > .messages > .message {
     text-align: justify;
 }
 
-main > .chat > .messages > .message.expanded {
+main>.chat>.messages>.message.expanded {
     min-height: 55vh;
 }
 
-main > .chat > .messages > .message > .userInChatInfos {
+main>.chat>.messages>.message>.userInChatInfos {
     position: relative;
     display: flex;
     width: 10rem;
@@ -282,7 +287,7 @@ main > .chat > .messages > .message > .userInChatInfos {
     z-index: 10;
 }
 
-main > .chat > .messages > .message > .userInChatInfos > .profileInChatPic {
+main>.chat>.messages>.message>.userInChatInfos>.profileInChatPic {
     position: relative;
     width: 4rem;
     height: 4rem;
@@ -292,14 +297,14 @@ main > .chat > .messages > .message > .userInChatInfos > .profileInChatPic {
     background-repeat: no-repeat;
 }
 
-main > .chat > .messages > .message > .userInChatInfos > .userInChatName {
+main>.chat>.messages>.message>.userInChatInfos>.userInChatName {
     position: relative;
     color: #4b474a;
     top: -0.5rem;
     left: 0.5rem;
 }
 
-main > .chat > .messages > .message > .content{
+main>.chat>.messages>.message>.content {
     position: relative;
     z-index: 11;
     left: -3.5rem;
@@ -309,7 +314,7 @@ main > .chat > .messages > .message > .content{
 }
 
 
-main > .chat > .chatForm {
+main>.chat>.chatForm {
     position: relative;
     display: flex;
     align-items: center;
@@ -320,7 +325,7 @@ main > .chat > .chatForm {
     top: 36%;
 }
 
-main > .chat > .chatForm > .input{
+main>.chat>.chatForm>.input {
     position: relative;
     display: flex;
     width: 100%;
@@ -341,20 +346,20 @@ main > .chat > .chatForm > .input{
     text-align: end;
 }
 
-#myMessage .userInChatInfos > .profileInChatPic {
+#myMessage .userInChatInfos>.profileInChatPic {
     position: absolute;
     right: 0;
 
 }
 
-#myMessage .userInChatInfos > .userInChatName {
+#myMessage .userInChatInfos>.userInChatName {
     position: absolute;
     right: 5rem;
 
 }
 
 
-#myMessage > .content {
+#myMessage>.content {
     position: relative;
     left: 0.5rem;
     text-align: end;
@@ -377,11 +382,13 @@ main > .chat > .chatForm > .input{
     border: 1px solid #9bcebe;
     align-items: center;
     word-wrap: break-word;
-  }
-  .messageBox:focus-within {
+}
+
+.messageBox:focus-within {
     border: 1px solid rgb(110, 110, 110);
-  }
-  .fileUploadWrapper {
+}
+
+.fileUploadWrapper {
     position: absolute;
     left: 25px;
     width: fit-content;
@@ -390,12 +397,13 @@ main > .chat > .chatForm > .input{
     align-items: center;
     justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  #file {
+}
+
+#file {
     display: none;
-  }
-  .fileUploadWrapper label {
+}
+
+.fileUploadWrapper label {
     cursor: pointer;
     width: fit-content;
     height: fit-content;
@@ -403,28 +411,35 @@ main > .chat > .chatForm > .input{
     align-items: center;
     justify-content: center;
     position: relative;
-  }
-  .fileUploadWrapper label svg {
+}
+
+.fileUploadWrapper label svg {
     height: 18px;
-  }
-  .fileUploadWrapper label svg path {
+}
+
+.fileUploadWrapper label svg path {
     transition: all 0.3s;
-  }
-  .fileUploadWrapper label svg circle {
+}
+
+.fileUploadWrapper label svg circle {
     transition: all 0.3s;
-  }
-  .fileUploadWrapper label:hover svg path {
+}
+
+.fileUploadWrapper label:hover svg path {
     stroke: #fff;
-  }
-  .fileUploadWrapper label:hover svg circle {
+}
+
+.fileUploadWrapper label:hover svg circle {
     stroke: #fff;
     fill: #3c3c3c;
-  }
-  .fileUploadWrapper label:hover .tooltip {
+}
+
+.fileUploadWrapper label:hover .tooltip {
     display: block;
     opacity: 1;
-  }
-  .tooltip {
+}
+
+.tooltip {
     position: absolute;
     top: -40px;
     display: none;
@@ -438,8 +453,9 @@ main > .chat > .chatForm > .input{
     border-radius: 5px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.596);
     transition: all 0.3s;
-  }
-  #messageInput {
+}
+
+#messageInput {
     width: 85%;
     height: 100%;
     background-color: transparent;
@@ -447,15 +463,17 @@ main > .chat > .chatForm > .input{
     border: none;
     padding-left: 10px;
     color: #000;
-    word-wrap: break-word; /* Faz com que o texto quebre para a linha de baixo quando necessário */
+    word-wrap: break-word;
+    /* Faz com que o texto quebre para a linha de baixo quando necessário */
 }
-  #messageInput:focus ~ #sendButton svg path,
-  #messageInput:valid ~ #sendButton svg path {
+
+#messageInput:focus~#sendButton svg path,
+#messageInput:valid~#sendButton svg path {
     fill: #3c3c3c;
     stroke: white;
-  }
-  
-  #sendButton {
+}
+
+#sendButton {
     width: fit-content;
     height: 100%;
     background-color: transparent;
@@ -466,19 +484,22 @@ main > .chat > .chatForm > .input{
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s;
-  }
-  #sendButton svg {
+}
+
+#sendButton svg {
     height: 18px;
     transition: all 0.3s;
-  }
-  #sendButton svg path {
+}
+
+#sendButton svg path {
     transition: all 0.3s;
-  }
-  #sendButton:hover svg path {
+}
+
+#sendButton:hover svg path {
     fill: #3c3c3c;
     stroke: white;
-  }
-  
+}
+
 
 
 
@@ -617,4 +638,89 @@ main > .chat > .chatForm > .input{
     visibility: visible;
     transform: scale(1);
     transition: 0s;
+}
+
+
+/*menu mobile */
+.button-container {
+    display: none;
+    background-color: rgba(245, 73, 144);
+    width: 250px;
+    height: 40px;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px,
+        rgba(245, 73, 144, 0.5) 5px 10px 15px;
+}
+
+.button {
+    outline: 0 !important;
+    border: 0 !important;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+}
+
+.icon {
+    font-size: 20px;
+}
+
+
+
+
+
+/* menu mobile button*/
+.menuMobileButton {
+    display: none;
+}
+
+.hamburger {
+    cursor: pointer;
+}
+
+.hamburger input {
+    display: none;
+}
+
+.hamburger svg {
+    /* The size of the SVG defines the overall size */
+    height: 3em;
+    /* Define the transition for transforming the SVG */
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+    fill: none;
+    stroke: rgb(0, 0, 0);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    /* Define the transition for transforming the Stroke */
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+        stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+    stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked+svg {
+    transform: rotate(-45deg);
+}
+
+.hamburger input:checked+svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
 }
