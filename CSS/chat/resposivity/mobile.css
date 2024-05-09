@@ -1,50 +1,85 @@
 @media (max-width: 430px) and (max-height: 930px) {
+    main {
+        position: absolute;
+        left: 0;
+    }
+
     nav {
         display: none;
     }
 
     .groups {
         display: none;
+
+        transition: display 2s;
     }
 
     .menuOptions {
-        display: none;
+        position: absolute;
+        top: 93%;
+        display: none !important;
+        z-index: 102;
+        width: 70vw;
+        height: 7vh !important;
+        align-items: center;
+        justify-content: center;
+        left: 50%;
+        transform: translate(-50%);
+        
+    }
+
+    .button-container {
+        display: flex !important;
+        background-color: var(--Main-Color-Light);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px,
+        #a1aefa9a 5px 10px 15px;
+    }
+
+    .button-container > .button {
+        color: #000;
     }
 
     .menuMobileButton {
+        position: absolute !important;
         display: flex;
+        top: 3vh;
         height: 8vh;
+        z-index: 101;
     }
-
 
     .menuMobileButton > .hamburger {
         display: flex;
         z-index: 10;    
     }
 
-
-    .menuMobileButton > .hamburger input:checked ~ .options{
-        position: absolute;
-        display: block;
-        height: 100vh;
+    #groupsById {
+        display: flex !important;
+        animation: MenuPull ease 1s forwards;
     }
 
-    .menuMobileButton > .hamburger input:checked ~ .groups {
-        position: absolute;
-        background-color: #ffffff;
-        right: 0;
-        width: 77vw;
-        display: flex;
-    }
-
-    .menuMobileButton > .hamburger input:checked ~ .groups > .searchBar {
-        display: flex;
-        z-index: 100;
-    }
-
-    .options > .profilePic {
+    #groupsUnselect {
         display: none;
+        animation: MenuPush ease 1s forwards;
     }
+
+    
+    @keyframes MenuPull {
+        from {
+            width: 0vw;
+        } to {
+            width: 100vw;
+        }
+    }
+    
+    @keyframes MenuPush {
+        from {
+            width: 100vw;
+        } to {
+            width: 0vw;
+            display: none;
+        }
+    }
+
 
     .lastMessageHour {
         left: 9rem !important;
@@ -55,6 +90,7 @@
         left: 0;
         right: 0;
         width: 100vw;
+
         z-index: 9;
     }
 
@@ -62,6 +98,7 @@
         position: absolute !important;
         width: 100vw;
         left: 0;
+        height: 75vh;
         top: 3.5rem !important;
     }
 
@@ -72,14 +109,18 @@
     }
 
     main > .chat > .chatForm > .input > .messageBox > #messageInput {
+        position: relative;
         left: 1.5rem;
+        width: 80%;
     }
 
-
+    #sendButton {
+        z-index: 100;
+    }
         
-    .menuMobileButton > .hamburger > .groups  {
+    .groups  {
         position: relative;
-        background-color: #00ffaa1a;
+        background-color: #fff !important;
         width: 70vw;
         height: 100vh;
         align-items: center;
@@ -87,57 +128,60 @@
         text-align: center;
         align-content: center;
         padding: 5px;
+        z-index: 100 !important;
     }
 
-    .menuMobileButton > .hamburger > .groups > .searchBar {
+    .groups > .searchBar {
         display: flex;
         padding: 1vh;
-        position: absolute;
+        position: absolute !important;
         align-items: center;
         justify-content: center;
         text-align: center;
         align-content: center;
         height: 8vh;
         width: 70vw;
-        top: 0;
+        left: 3rem;
+        top: 2vh !important;
+        box-shadow: none !important;
     }
 
-    .menuMobileButton > .hamburger > .groups >.groupsAndChats {
+    .groups >.groupsAndChats {
         position: absolute;
         width: 100%;
-        height: 100%;
+        height: 90% !important;
         bottom: 0 !important;
     }
 
-    .menuMobileButton > .hamburger > .groups >.groupsAndChats>.groupsList {
+    .groups >.groupsAndChats>.groupsList {
         position: absolute;
         display: flex;
         flex-direction: column;
         overflow: auto;
         width: 100%;
-        height: 90%;
+        height: 88% !important;
         bottom: 0;
+        top: 1rem;
         align-items: center;
         left: 0;
     }
 
-    .menuMobileButton > .hamburger > .groups >.groupsAndChats>.groupsList ul {
+    .groups >.groupsAndChats>.groupsList ul {
         background-color: #fff;
         cursor: pointer;
-        padding: 5px;
+        padding: 5px !important;
         max-width: 95%;
-        width: 90%;
+        width: 85% !important; 
         min-height: 130px;
         border-radius: 3px;
         list-style: none;
-        box-shadow: 3px 3px 3px 10px #0000001c !important;
     }
 
-    .menuMobileButton > .hamburger > .groups >.groupsAndChats>.groupsList ul:last-child {
+    .groups >.groupsAndChats>.groupsList ul:last-child {
         margin-bottom: 20%;
     }
 
-    .menuMobileButton > .hamburger > .groups >.groupsAndChats>.groupsList ul li {
+    .groups >.groupsAndChats>.groupsList ul li {
         display: flex;
         flex-direction: column;
         background-color: #6877721a;
@@ -146,21 +190,21 @@
         text-align: start;
     }
 
-    .menuMobileButton > .hamburger > .groups >.groupsAndChats>.groupsList ul li>.infos {
+    .groups >.groupsAndChats>.groupsList ul li>.infos {
         width: 100%;
         z-index: 10;
         height: 100%;
         right: 0;
     }
 
-    .menuMobileButton > .hamburger > .groups >.groupsAndChats>.groupsList ul li>.infos>.infosCard {
+    .groups >.groupsAndChats>.groupsList ul li>.infos>.infosCard {
         position: relative;
         display: flex;
         width: 100%;
         height: 80%;
     }
 
-    .menuMobileButton > .hamburger > .groups >.groupsAndChats>.groupsList ul li>.infos>.infosCard>.userPic {
+    .groups >.groupsAndChats>.groupsList ul li>.infos>.infosCard>.userPic {
         position: relative;
         top: 5px;
         left: 5px;
@@ -173,7 +217,7 @@
         background-position: center;
     }
 
-    .menuMobileButton > .hamburger > .groups >.groupsAndChats>.groupsList ul li>.infos>.infosCard>.messagePreview {
+    .groups >.groupsAndChats>.groupsList ul li>.infos>.infosCard>.messagePreview {
         position: absolute;
         display: flex;
         top: 6rem;
@@ -187,7 +231,7 @@
         align-items: center;
     }
 
-    .menuMobileButton > .hamburger > .groups >.groupsAndChats>.groupsList ul li>.infos>.infosCard>.messagePreview p {
+    .groups >.groupsAndChats>.groupsList ul li>.infos>.infosCard>.messagePreview p {
         width: 100%;
         white-space: nowrap;
         /* Impede que o texto seja quebrado em várias linhas */
@@ -207,7 +251,7 @@
         border: 5px 5px 5px 5px blue;
     }
 
-    .menuMobileButton > .hamburger > .groups >.groupsAndChats>.groupsList ul li>.infos>.infosCard>.userInfos {
+    .groups >.groupsAndChats>.groupsList ul li>.infos>.infosCard>.userInfos {
         position: absolute;
         width: 75%;
         height: 10vh;
@@ -216,18 +260,18 @@
         flex-direction: column;
     }
 
-    .menuMobileButton > .hamburger > .groups >.groupsAndChats>.groupsList ul li>.infos>.infosCard>.userInfos h1 {
+    .groups >.groupsAndChats>.groupsList ul li>.infos>.infosCard>.userInfos h1 {
         position: absolute;
         font-size: 20px;
     }
 
-    .menuMobileButton > .hamburger > .groups >.groupsAndChats>.groupsList ul li>.infos>.infosCard>.userInfos p {
+    .groups >.groupsAndChats>.groupsList ul li>.infos>.infosCard>.userInfos p {
         position: absolute;
         top: 25px;
         font-size: 15px;
     }
 
-    .menuMobileButton > .hamburger > .groups >.groupsAndChats>.groupsList ul li>.infos>.infosCard>.userInfos>.lastMessageHour {
+    .groups >.groupsAndChats>.groupsList ul li>.infos>.infosCard>.userInfos>.lastMessageHour {
         position: absolute;
         top: -2.5px;
         font-size: 15px;

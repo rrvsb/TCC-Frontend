@@ -6,10 +6,7 @@ const messagesDiv = document.querySelector(".messages");
 
 const socket = io("https://tcc-u2qf.onrender.com", {
     query: { roomName: room }
-});
-
-
-
+}); 
 
 const render = (data) => {
     const message = document.createElement("div");

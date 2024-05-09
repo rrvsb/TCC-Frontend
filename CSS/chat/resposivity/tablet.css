@@ -1,4 +1,4 @@
-@media (max-width: 885px) and (max-height: 1280px){
+@media (max-width: 885px) and (max-height: 1280px) and (min-width: 431px) and (min-height: 931px){
     .options {
         display: none;
     }
@@ -10,24 +10,32 @@
     }
 
     main > .groups {
-        width: 40vw;
+        width: 50vw !important;
         overflow: hidden;
     }
 
     main > .groups > .searchBar {
         height: 5vh;
-        box-shadow: 0px 1px 10px 0px #000;
     }
 
 
     main > .groups > .groupsAndChats > .groupsList {
         position: relative;
         top: 1rem;
+        width: 100%;
         height: 85.5vh;
         overflow-x: hidden;
         overflow-y: scroll;
     }
+    main > .chat {
+        width: 50vw;
+    }
 
+    .menuOptions {
+        position: relative;
+        right: auto;
+        left: auto;
+    }
 
     main > .groups > .groupsAndChats > .groupsList > .contact > li > .infos > .infosCard > .userInfos {
         position: relative;
@@ -47,6 +55,11 @@
     main > .chat > .chatForm > .input > .messageBox > #messageInput{
         position: relative;
         left: 0.7rem;
+    }
+
+    main > .chat > .chatForm > .input > .messageBox{
+        position: relative;
+        width: 52vw !important;
     }
 
     main > .chat > .chatForm > .input > .messageBox > #sendButton{
