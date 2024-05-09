@@ -10,7 +10,7 @@ const rememberMe = document.querySelector(".lembrarDeMimInput");
 
 const url = new URLSearchParams(window.location.search);
 const errorId = url.get("errorID");
-
+localStorage.clear()
 window.addEventListener("DOMContentLoaded", () => {
     const userData = JSON.parse(localStorage.getItem("userData"));
 
@@ -29,6 +29,7 @@ rememberMe.addEventListener("change", () => {
         localStorage.setItem("userData", JSON.stringify(userData));
     }
 });
+
 switch (true) {
     case errorId === "153032":
         passwordErrorElement.textContent = "Senha invalida";

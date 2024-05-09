@@ -5,6 +5,7 @@
     height: 4rem;
     width: 100%;
     background-color: rebeccapurple;
+    justify-content: left;
 }
 
 .post-header img {
@@ -18,20 +19,41 @@
     -webkit-user-drag: none;
 }
 
-.post-header > .user-infos {
+.post-header>.user-infos {
+    position: relative;
     text-align: start;
     font-weight: 600;
-    position: relative;
     justify-content: center;
     width: 50%;
     left: 2%;
-    background-color: red;
 }
+
+.user-infos p:nth-child(1) {
+    position: relative;
+}
+
+.user-infos p:nth-child(2) {
+    position: relative;
+    top: -15%;
+}
+
+.configs {
+    width: 3.5vw;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.configs>.button {
+    background-color: transparent;
+    border: none;
+
+}
+
 
 
 .post-content {
     width: 100%;
-
     height: 11.2rem;
 }
 

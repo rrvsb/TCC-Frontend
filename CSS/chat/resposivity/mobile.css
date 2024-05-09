@@ -1,0 +1,409 @@
+@media (max-width: 430px) and (max-height: 930px) {
+    main {
+        position: absolute;
+        left: 0;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .groups {
+        display: none;
+
+        transition: display 2s;
+    }
+
+    .menuOptions {
+        position: absolute;
+        top: 93%;
+        display: none !important;
+        z-index: 102;
+        width: 70vw;
+        height: 7vh !important;
+        align-items: center;
+        justify-content: center;
+        left: 50%;
+        transform: translate(-50%);
+        
+    }
+
+    .button-container {
+        display: flex !important;
+        background-color: var(--Main-Color-Light);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px,
+        #a1aefa9a 5px 10px 15px;
+    }
+
+    .button-container > .button {
+        color: #000;
+    }
+
+    .menuMobileButton {
+        position: absolute !important;
+        display: flex;
+        top: 3vh;
+        height: 8vh;
+        z-index: 101;
+    }
+
+    .menuMobileButton > .hamburger {
+        display: flex;
+        z-index: 10;    
+    }
+
+    #groupsById {
+        display: flex !important;
+        animation: MenuPull ease 1s forwards;
+    }
+
+    #groupsUnselect {
+        display: none;
+        animation: MenuPush ease 1s forwards;
+    }
+
+    
+    @keyframes MenuPull {
+        from {
+            width: 0vw;
+        } to {
+            width: 100vw;
+        }
+    }
+    
+    @keyframes MenuPush {
+        from {
+            width: 100vw;
+        } to {
+            width: 0vw;
+            display: none;
+        }
+    }
+
+
+    .lastMessageHour {
+        left: 9rem !important;
+    }   
+
+    main > .chat {
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100vw;
+
+        z-index: 9;
+    }
+
+    main > .chat > .messages {
+        position: absolute !important;
+        width: 100vw;
+        left: 0;
+        height: 75vh;
+        top: 3.5rem !important;
+    }
+
+    main > .chat > .chatForm > .input {
+        position: absolute;
+        left: -1.2rem;
+        width: 100vw;
+    }
+
+    main > .chat > .chatForm > .input > .messageBox > #messageInput {
+        position: relative;
+        left: 1.5rem;
+        width: 80%;
+    }
+
+    #sendButton {
+        z-index: 100;
+    }
+        
+    .groups  {
+        position: relative;
+        background-color: #fff !important;
+        width: 70vw;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        align-content: center;
+        padding: 5px;
+        z-index: 100 !important;
+    }
+
+    .groups > .searchBar {
+        display: flex;
+        padding: 1vh;
+        position: absolute !important;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        align-content: center;
+        height: 8vh;
+        width: 70vw;
+        left: 3rem;
+        top: 2vh !important;
+        box-shadow: none !important;
+    }
+
+    .groups >.groupsAndChats {
+        position: absolute;
+        width: 100%;
+        height: 90% !important;
+        bottom: 0 !important;
+    }
+
+    .groups >.groupsAndChats>.groupsList {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+        width: 100%;
+        height: 88% !important;
+        bottom: 0;
+        top: 1rem;
+        align-items: center;
+        left: 0;
+    }
+
+    .groups >.groupsAndChats>.groupsList ul {
+        background-color: #fff;
+        cursor: pointer;
+        padding: 5px !important;
+        max-width: 95%;
+        width: 85% !important; 
+        min-height: 130px;
+        border-radius: 3px;
+        list-style: none;
+    }
+
+    .groups >.groupsAndChats>.groupsList ul:last-child {
+        margin-bottom: 20%;
+    }
+
+    .groups >.groupsAndChats>.groupsList ul li {
+        display: flex;
+        flex-direction: column;
+        background-color: #6877721a;
+        width: 100%;
+        height: 100%;
+        text-align: start;
+    }
+
+    .groups >.groupsAndChats>.groupsList ul li>.infos {
+        width: 100%;
+        z-index: 10;
+        height: 100%;
+        right: 0;
+    }
+
+    .groups >.groupsAndChats>.groupsList ul li>.infos>.infosCard {
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 80%;
+    }
+
+    .groups >.groupsAndChats>.groupsList ul li>.infos>.infosCard>.userPic {
+        position: relative;
+        top: 5px;
+        left: 5px;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .groups >.groupsAndChats>.groupsList ul li>.infos>.infosCard>.messagePreview {
+        position: absolute;
+        display: flex;
+        top: 6rem;
+        width: 95%;
+        height: 3vh;
+        align-content: center;
+        align-self: center;
+        left: 50%;
+        transform: translate(-50%);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .groups >.groupsAndChats>.groupsList ul li>.infos>.infosCard>.messagePreview p {
+        width: 100%;
+        white-space: nowrap;
+        /* Impede que o texto seja quebrado em várias linhas */
+        overflow: hidden;
+        /* Oculta o conteúdo que excede a div */
+        text-overflow: ellipsis;
+        /* Substitui texto excedente por reticências */
+    }
+
+    #chatSelected {
+        background-color: black;
+        color: #fff;
+    }
+
+    #chatSelected li {
+        background-color: rgb(24, 24, 24);
+        border: 5px 5px 5px 5px blue;
+    }
+
+    .groups >.groupsAndChats>.groupsList ul li>.infos>.infosCard>.userInfos {
+        position: absolute;
+        width: 75%;
+        height: 10vh;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .groups >.groupsAndChats>.groupsList ul li>.infos>.infosCard>.userInfos h1 {
+        position: absolute;
+        font-size: 20px;
+    }
+
+    .groups >.groupsAndChats>.groupsList ul li>.infos>.infosCard>.userInfos p {
+        position: absolute;
+        top: 25px;
+        font-size: 15px;
+    }
+
+    .groups >.groupsAndChats>.groupsList ul li>.infos>.infosCard>.userInfos>.lastMessageHour {
+        position: absolute;
+        top: -2.5px;
+        font-size: 15px;
+        left: 5rem;
+    }
+
+    
+.form {
+    --input-bg: #FFf;
+    /*  background of input */
+    --padding: 1.5em;
+    --rotate: 80deg;
+    /*  rotation degree of input*/
+    --gap: 2em;
+    /*  gap of items in input */
+    --icon-change-color: #15A986;
+    /*  when rotating changed icon color */
+    --height: 40px;
+    /*  height */
+    width: 90%;
+    padding-inline-end: 1em;
+    /*  change this for padding in the end of input */
+    background: var(--input-bg);
+    position: relative;
+    border-radius: 4px;
+    z-index: 100;
+}
+
+.form label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: var(--height);
+}
+
+.form input {
+    width: 100%;
+    padding-inline-start: calc(var(--padding) + var(--gap));
+    outline: none;
+    background: none;
+    border: 0;
+}
+
+/* style for both icons -- search,close */
+.form svg {
+    /* display: block; */
+    color: #111;
+    transition: 0.3s cubic-bezier(.4, 0, .2, 1);
+    position: absolute;
+    height: 15px;
+}
+
+/* search icon */
+.icon {
+    position: absolute;
+    left: var(--padding);
+    transition: 0.3s cubic-bezier(.4, 0, .2, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* arrow-icon*/
+.swap-off {
+    transform: rotate(-80deg);
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* close button */
+.close-btn {
+    /* removing default bg of button */
+    background: none;
+    border: none;
+    right: calc(var(--padding) - var(--gap));
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #111;
+    padding: 0.1em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transition: 0.3s;
+    opacity: 0;
+    transform: scale(0);
+    visibility: hidden;
+}
+
+.form input {
+    position: absolute !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.form input:focus~.icon {
+    transform: rotate(var(--rotate)) scale(1.3);
+}
+
+.form input:focus~.icon .swap-off {
+    opacity: 1;
+    transform: rotate(-80deg);
+    visibility: visible;
+    color: var(--icon-change-color);
+}
+
+.form input:focus~.icon .swap-on {
+    opacity: 0;
+    visibility: visible;
+}
+
+.form input:valid~.icon {
+    transform: scale(1.3) rotate(var(--rotate))
+}
+
+.form input:valid~.icon .swap-off {
+    opacity: 1;
+    visibility: visible;
+    color: var(--icon-change-color);
+}
+
+.form input:valid~.icon .swap-on {
+    opacity: 0;
+    visibility: visible;
+}
+
+.form input:valid~.close-btn {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transition: 0s;
+}
+
+}
