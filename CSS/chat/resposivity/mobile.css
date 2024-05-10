@@ -76,7 +76,7 @@
             width: 100vw;
         } to {
             width: 0vw;
-            display: none;
+            display: none !important;
         }
     }
 
