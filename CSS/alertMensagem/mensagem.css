@@ -1,0 +1,33 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+}
+
+.main
+{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #00bbff;
+    height: 50vh;
+    width: 50%;
+
+ 
+}
+
+.secundaria
+{
+    display: flex;
+    justify-content: center;
+    width: 30vh;
+    height: 30vh;
+    
+    
+
+}
