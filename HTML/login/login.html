@@ -17,11 +17,11 @@
   <div class="container">
     <h2 class="Container-user-title">Login</h2>
 
-    <form action="./login-validation.html" class="formLogin">
+    <form class="formLogin">
 
       <div class="input-group">
         <div class="wave-group">
-          <input required="" type="text" class="input" minlength="7" maxlength="55" id="username">
+          <input required="" type="text" class="input" minlength="7" maxlength="55" id="login-username">
           <span class="bar"></span>
           <label class="label">
             <span class="label-char" style="--index: 0">U</span>
@@ -39,7 +39,7 @@
 
       <div class="input-group">
         <div class="wave-group">
-          <input required="" type="text" class="input" minlength="7" maxlength="55" id="email">
+          <input required="" type="text" class="input" minlength="7" maxlength="55" id="login-email">
           <span class="bar"></span>
           <label class="label">
             <span class="label-char" style="--index: 0">E</span>
@@ -54,7 +54,7 @@
 
       <div class="input-group">
         <div class="wave-group">
-          <input required="" type="password" class="input" minlength="7" maxlength="55" id="password">
+          <input required="" type="password" class="input" minlength="7" maxlength="55" id="login-password">
           <span class="bar"></span>
           <label class="label">
             <span class="label-char" style="--index: 0">S</span>
@@ -67,9 +67,7 @@
         <div id="passwordError" class="error-message" style="color: red;"></div>
       </div><!--fechando o input-group-->
 
-
-
-      <input type="submit" value="Login" class="submit" id="submit" disabled>
+      <input type="submit" value="Login" class="submit" id="submit">
 
       <div class="lembrarDeMim">
         <input type="checkbox" name="lembrarDeMimInput" id="lembrarDeMimInput" class="lembrarDeMimInput">
@@ -188,9 +186,9 @@
     </form>
   </div>
 
-
+  <script src="../../js/api/api-class.js"></script>
   <script src="../../js/login/login-style-script.js"></script>
-  <!-- <script src="../../js/login/login.js"></script> -->
+  <script src="../../js/login/login.js"></script>
   <script src="../../js/login/register-user.js"></script>
 </body>
 

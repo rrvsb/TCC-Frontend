@@ -67,18 +67,8 @@ const clear = () => {
     messagesDiv.textContent = ""
 }
 
-// document.addEventListener("DOMContentLoaded", () => {
-//     socket.emit("find_messages", "room0")
-
-//     socket.on("all_ message", (data) => {
-//         console.log(data)
-//     })
-// })
-
 // Receptor de mensagem do servidor
 socket.on("message", (data) => {
     console.log(data.content)
     render(data)
 });
-
-// clear();

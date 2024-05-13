@@ -9,7 +9,6 @@ const ContainerRegisterForm = document.querySelector(".formRegister");
 let registerContainer = false;
 const container = document.querySelector(".container");
 const loginForm = document.querySelector(".formLogin");
-const registerForm = document.querySelector(".formRegister");
 
 switchContainerLink.addEventListener("click", () => {
     registerContainer = !registerContainer;
