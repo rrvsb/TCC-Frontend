@@ -13,7 +13,42 @@ body {
     user-select: none;
 }
 
-.login-container {
+#login-container {
+    animation: loginStart 2s forwards;
+}
+
+#register-container {
+    width: 25vw;
+    height: 75vh;
+    top: 45%;
+    animation: registerStart 2s forwards;
+}
+
+@keyframes registerStart {
+    0% {
+        width: 0vw;
+        height: 0vh;
+    } 25% {
+        width: 25vw;
+        height: 5vh;
+    } 100% {
+        height: 75vh;
+    }
+}
+
+@keyframes loginStart {
+    0% {
+        width: 0vw;
+        height: 0vh;
+    } 25% {
+        width: 20vw;
+        height: 5vh;
+    } 100% {
+        height: 55vh;
+    }
+}
+
+.container {
     position: absolute;
     top: 52%;
     left: 20%;
@@ -26,7 +61,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.349);
 }
 
-.login-container h2 {
+.container h2 {
     text-align: center;
     margin-bottom: 20px;
     font-family: abibas;
@@ -196,4 +231,13 @@ form .submit:enabled {
 .wave-group .input:focus~.bar:before,
 .wave-group .input:focus~.bar:after {
     width: 50%;
+}
+
+.formRegister {
+    height: 90%;
+    flex-direction: column;
+}
+
+.formLogin {
+    flex-direction: column;
 }

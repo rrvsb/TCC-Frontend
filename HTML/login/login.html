@@ -14,10 +14,10 @@
 
 <body>
   <h1 class="title"></h1>
-  <div class="login-container">
+  <div class="container">
     <h2 class="Container-user-title">Login</h2>
 
-    <form action="./login-validation.html" id="formLogin">
+    <form action="./login-validation.html" class="formLogin">
 
       <div class="input-group">
         <div class="wave-group">
@@ -78,11 +78,12 @@
     </form><!--fechando o form-->
 
     <div class="options">
-      <button><a href="#" class="Container-user-link" id="Container-user-link-loginRegister">cadastrar-se</a></button>
+      <button><a href="#" class="Container-user-link" id="Container-user-link-loginRegister">Cadastrar-se</a></button>
       <button><a href="#" class="Container-user-link" id="Container-user-link-PasswordForgot">esqueci a senha</a></button>
     </div><!--fechando a options-->
 
     <form action="" class="formRegister">
+
       <div class="form-group">
         <div class="wave-group">
           <input required="" type="text" class="input" minlength="7" maxlength="55" id="nome">
@@ -95,6 +96,7 @@
           </label>
         </div>
       </div><!--fechamento form group-->
+
       <div class="form-group">
         <div class="wave-group">
           <input required="" type="text" class="input" minlength="7" maxlength="55" id="sobrenome">
@@ -112,6 +114,7 @@
           </label>
         </div>
       </div><!--fechamento form group-->
+
       <div class="form-group">
         <div class="wave-group">
           <input required="" type="text" class="input" minlength="7" maxlength="55" id="email">
@@ -125,6 +128,7 @@
           </label>
         </div>
       </div><!--fechamento form group-->
+
       <div class="form-group">
         <div class="wave-group">
           <input required="" type="text" class="input" minlength="7" maxlength="55" id="nickname">
@@ -141,6 +145,7 @@
           </label>
         </div>
       </div><!--fechamento form group-->
+
       <div class="form-group">
         <div class="wave-group">
           <input required="" type="password" class="input" minlength="7" maxlength="55" id="password">
@@ -154,6 +159,7 @@
           </label>
         </div>
       </div><!--fechamento form group-->
+
       <div class="form-group">
         <div class="wave-group">
           <input required="" type="password" class="input" minlength="7" maxlength="55" id="confirmarSenha">
@@ -177,13 +183,14 @@
           </label>
         </div>
       </div><!--fechamento form group-->
+
       <input type="submit" value="Cadastrar-se">
     </form>
   </div>
 
 
-  <script src="../../js/login/login.js"></script>
   <script src="../../js/login/login-style-script.js"></script>
+  <!-- <script src="../../js/login/login.js"></script> -->
   <script src="../../js/login/register-user.js"></script>
 </body>
 

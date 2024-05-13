@@ -2,31 +2,37 @@ const title = document.querySelector(".title");
 const titlePage = document.title;
 const ContainerTitle = document.querySelector(".Container-user-title");
 
-const ContainerLink = document.querySelector(".Container-user-link");
+const switchContainerLink = document.querySelector(".Container-user-link");
 const ContainerLoginForm = document.querySelector("#formLogin");
 const ContainerRegisterForm = document.querySelector(".formRegister");
 
-const cadastroOuLogin = document.querySelector("#Container-user-link-loginRegister");
-const passwordForgot = document.querySelector("#Container-user-link-PasswordForgot");
-let registerOrLogin = false;
+let registerContainer = false;
+const container = document.querySelector(".container");
+const loginForm = document.querySelector(".formLogin");
+const registerForm = document.querySelector(".formRegister");
 
-ContainerLink.addEventListener("click", () => {
-    registerOrLogin = !registerOrLogin;
-    if (registerOrLogin) {
-        ContainerTitle.textContent = "cadastro"
-        ContainerLoginForm.style.display = "none"
-        ContainerRegisterForm.style.display = "block"
-        passwordForgot.style.display = "none"
-        cadastroOuLogin.textContent = "login";
-        registerOrLogin = true;
-    } 
-    if (!registerOrLogin) {
-        ContainerTitle.textContent = "Login"
-        ContainerLoginForm.style.display = "block"
-        ContainerRegisterForm.style.display = "none"
-        passwordForgot.style.display = "block"
-        cadastroOuLogin.textContent = "cadastrar-se";
-        registerOrLogin = false;
+switchContainerLink.addEventListener("click", () => {
+    registerContainer = !registerContainer;
+    console.log(loginForm)
+
+    if(!registerContainer) {
+        loginForm.id = 'login-container-active'
+        switchContainerLink.textContent = "Cadastar-se"
+        registerForm.id = ''
+        container.id = "login-container"
+    } else {
+        registerForm.id = 'register-container-active'
+        switchContainerLink.textContent = "Login"
+        loginForm.id = ''
+        container.id = "register-container"
+    }
+
+    if(registerForm.id == "register-container-active") {
+        registerForm.style = "display: flex;";
+        loginForm.style = "display: none;"
+    } else if (loginForm.id == 'login-container-active') {
+        loginForm.style = "display: flex;"
+        registerForm.style = "display: none;";
     }
 })
 
