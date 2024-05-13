@@ -3,6 +3,8 @@ const room = url.get("room");
 
 const user = localStorage.getItem("userNickname");
 const messagesDiv = document.querySelector(".messages");
+const { nickname } = JSON.parse(localStorage.getItem("userInfo"));
+const nick = nickname
 
 const socket = io("https://tcc-u2qf.onrender.com", {
     query: { roomName: room }
@@ -28,7 +30,11 @@ function render(data) {
 
     const nickname = document.createElement("p")
     nickname.className = "userInChatName"
-    nickname.textContent = 'backendErro'
+    nickname.textContent = data.author
+
+    if(JSON.stringify(data.author) == JSON.stringify(nick)) {
+        message.id = "myMessage"
+    }
 
     // Adicione os elementos filhos um por um
     infos.appendChild(profileInChatPic);
@@ -53,7 +59,7 @@ form.addEventListener("submit", (e) => {
     const seconds = currentDate.getSeconds();
 
     socket.emit("message", {
-        author: "quantxz",
+        author: nickname,
         room: room,
         content: message.value,
         hour: `${hours}:${minutes}:${seconds}`
@@ -69,5 +75,5 @@ socket.on("message", (data) => {
         behavior: "smooth",
         top: messagesDiv.scrollHeight
     })
-    console.log(data.content)
+    
 });
