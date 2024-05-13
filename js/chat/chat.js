@@ -8,7 +8,7 @@ const socket = io("https://tcc-u2qf.onrender.com", {
     query: { roomName: room }
 }); 
 
-const render = (data) => {
+function render(data) {
     const message = document.createElement("div");
     message.className = "message";
 
@@ -47,7 +47,7 @@ const form = document.querySelector(".chatForm");
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     const currentDate = new Date();
-    const message = document.querySelector("#messageInput").value;
+    const message = document.querySelector("#messageInput");
     const hours = currentDate.getHours();
     const minutes = currentDate.getMinutes();
     const seconds = currentDate.getSeconds();
@@ -55,30 +55,19 @@ form.addEventListener("submit", (e) => {
     socket.emit("message", {
         author: "quantxz",
         room: room,
-        content: message,
+        content: message.value,
         hour: `${hours}:${minutes}:${seconds}`
     })
-    console.log(message)
+
+    message.value = null
 
 })
 
-
-const clear = () => {
-    messagesDiv.textContent = ""
-}
-
-// document.addEventListener("DOMContentLoaded", () => {
-//     socket.emit("find_messages", "room0")
-
-//     socket.on("all_ message", (data) => {
-//         console.log(data)
-//     })
-// })
-
-// Receptor de mensagem do servidor
 socket.on("message", (data) => {
+    render(data);
+    messagesDiv.scrollBy({
+        behavior: "smooth",
+        top: messagesDiv.scrollHeight
+    })
     console.log(data.content)
-    render(data)
 });
-
-// clear();

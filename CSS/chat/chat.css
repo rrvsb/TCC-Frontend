@@ -267,7 +267,7 @@ main>.chat>.messages {
     width: 100% !important;
     height: 72.5%;
     top: 0;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 main>.chat>.messages:first-child {
