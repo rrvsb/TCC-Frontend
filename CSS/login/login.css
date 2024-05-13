@@ -201,6 +201,37 @@ form .submit:enabled {
     color: #5264AE;
 }
 
+/* width: 20vw;
+height: 55vh; */
+
+#log {
+    animation: logAnim ease 1s forwards;
+}
+
+@keyframes logAnim {
+    0% {
+        display: none; /* Escondido */
+    } 
+    24.9% {
+        display: none; /* Escondido */
+        width: 0vw;
+        height: 0vw;
+    } 
+    25% {
+        display: flex !important; /* Exibido */
+        width: 0vw;
+        height: 0vw;
+    } 
+    50% {
+        width: 20vw;
+        height: 3vh;
+        content: none;
+    } 
+    100% {
+        height: 55vh;
+    }
+}
+
 .wave-group .bar {
     position: relative;
     display: block;

@@ -3,12 +3,14 @@ const room = url.get("room");
 
 const user = localStorage.getItem("userNickname");
 const messagesDiv = document.querySelector(".messages");
+const { nickname } = JSON.parse(localStorage.getItem("userInfo"));
+const nick = nickname
 
 const socket = io("https://tcc-u2qf.onrender.com", {
     query: { roomName: room }
 }); 
 
-const render = (data) => {
+function render(data) {
     const message = document.createElement("div");
     message.className = "message";
 
@@ -28,7 +30,11 @@ const render = (data) => {
 
     const nickname = document.createElement("p")
     nickname.className = "userInChatName"
-    nickname.textContent = 'backendErro'
+    nickname.textContent = data.author
+
+    if(JSON.stringify(data.author) == JSON.stringify(nick)) {
+        message.id = "myMessage"
+    }
 
     // Adicione os elementos filhos um por um
     infos.appendChild(profileInChatPic);
@@ -47,15 +53,15 @@ const form = document.querySelector(".chatForm");
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     const currentDate = new Date();
-    const message = document.querySelector("#messageInput").value;
+    const message = document.querySelector("#messageInput");
     const hours = currentDate.getHours();
     const minutes = currentDate.getMinutes();
     const seconds = currentDate.getSeconds();
 
     socket.emit("message", {
-        author: "quantxz",
+        author: nickname,
         room: room,
-        content: message,
+        content: message.value,
         hour: `${hours}:${minutes}:${seconds}`
     })
     console.log(message)
@@ -69,6 +75,10 @@ const clear = () => {
 
 // Receptor de mensagem do servidor
 socket.on("message", (data) => {
-    console.log(data.content)
-    render(data)
+    render(data);
+    messagesDiv.scrollBy({
+        behavior: "smooth",
+        top: messagesDiv.scrollHeight
+    })
+    
 });

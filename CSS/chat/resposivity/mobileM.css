@@ -1,4 +1,4 @@
-@media (max-width: 360px) and (max-height: 600px) {
+@media (max-width: 429px) and (max-height: 929px) {
 
     body {
         width: 100vw;
@@ -15,13 +15,13 @@
         overflow: hidden;
     }
 
-    main > .chat {
+    main>.chat {
         position: absolute;
         top: -1rem !important;
         left: 0 !important;
     }
 
-    main > .chat > .messages {
+    main>.chat>.messages {
         position: relative;
         top: 5rem !important;
     }
@@ -31,18 +31,18 @@
         top: 16rem !important;
     }
 
-    .groups >.groupsAndChats {
+    .groups>.groupsAndChats {
         position: absolute;
         width: 100%;
         height: 75% !important;
         top: 5rem !important;
         padding: 0px !important;
-    } 
+    }
 
-    .groups >.groupsAndChats > .groupsList{
+    .groups>.groupsAndChats>.groupsList {
         height: 100% !important;
         top: 0;
-    } 
+    }
 
     .groups>.groupsAndChats>.groupsList ul li>.infos>.infosCard>.userInfos {
         position: absolute;
@@ -52,20 +52,20 @@
         display: flex;
         flex-direction: column;
     }
-    
+
     .groups>.groupsAndChats>.groupsList ul li>.infos>.infosCard>.userInfos h1 {
         position: absolute;
         font-size: 20px;
         left: 1rem;
     }
-    
+
     .groups>.groupsAndChats>.groupsList ul li>.infos>.infosCard>.userInfos p {
         position: absolute;
         top: 25px;
         font-size: 15px;
         left: 1rem;
     }
-    
+
     .groups>.groupsAndChats>.groupsList ul li>.infos>.infosCard>.userInfos>.lastMessageHour {
         position: absolute;
         top: -2.5px;
@@ -77,8 +77,8 @@
         position: absolute;
         left: 2rem !important;
     }
-
+   
     .menuOptions {
-        top: 91% !important;
+        top: 86vh !important;
     }
 }
