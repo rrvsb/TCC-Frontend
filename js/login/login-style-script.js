@@ -18,11 +18,13 @@ switchContainerLink.addEventListener("click", () => {
         loginForm.id = 'login-container-active'
         switchContainerLink.textContent = "Cadastar-se"
         registerForm.id = ''
+        ContainerTitle.textContent = "Login"
         container.id = "login-container"
     } else {
         registerForm.id = 'register-container-active'
         switchContainerLink.textContent = "Login"
         loginForm.id = ''
+        ContainerTitle.textContent = "Cadastro"
         container.id = "register-container"
     }
 

@@ -1,5 +1,5 @@
 @media screen and (max-width: 1020px) {
-    .login-container {
+    container {
         width: 70vw;
         height: 56vh;
         left: 50%;
@@ -13,5 +13,96 @@
         background-image: url("../../assets/novooo.png");
         background-size: cover;
         background-repeat: no-repeat;
+    }
+}
+
+@media (width <=350px) {
+
+    body {
+        background-color: var(--Main-Color-Light);
+    }
+
+    .container {
+        height: 90vh;
+        top: 17rem;
+        margin-bottom: 2rem;
+    }
+
+    #login-container {
+        height: 90vh !important;
+    }
+
+    #register-container {
+        width: 75vw;
+        height: 125vh !important;
+        top: 85% !important;
+    }
+}
+
+@media (width <=576px) {
+    .container {
+        position: absolute;
+        left: 50%;
+        width: 70vw;
+    }
+
+    form .submit {
+
+        left: 0.5rem;
+    }
+
+    #register-container {
+        width: 75vw;
+        height: 75vh;
+        top: 45%;
+    }
+}
+
+@media (width <=768px) {
+    .container {
+        position: absolute;
+        left: 50%;
+        width: 70vw;
+    }
+
+
+    #register-container {
+        width: 75vw;
+        height: 75vh;
+        top: 45%;
+    }
+}
+
+@media (width >=800px) and (height >=1000px) {
+    .container {
+        position: absolute;
+        left: 50%;
+        width: 90vw !important;
+    }
+
+
+    #register-container {
+        top: 45%;
+    }
+
+    @keyframes registerStart {
+        0% {
+            width: 0vw;
+            height: 0vh;
+        }
+
+        25% {
+            width: 95vw;
+            height: 5vh;
+        }
+
+        100% {
+            height: 75vh;
+        }
+    }
+
+    form .submit {
+
+        left: 1rem;
     }
 }
