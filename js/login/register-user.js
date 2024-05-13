@@ -1,6 +1,6 @@
-const form = document.querySelector(".form")
+const registerForm = document.querySelector(".formRegister")
 
-form.addEventListener("submit", async (e) => {
+registerForm.addEventListener("submit", async (e) => {
     e.preventDefault()
     const authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTA1MDU3OTQsImV4cCI6MTcxMzE4NDE5NH0.lX_TJ9n2iUg7lL0UHsg2aVY9XJErj1yYZ6RBS41s2GA";
     const name = document.querySelector("#nome").value

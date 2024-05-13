@@ -2,12 +2,13 @@ const userInput = document.querySelector("#username");
 const passwordInput = document.querySelector("#password");
 const emailInput = document.querySelector("#email");
 const submitInput = document.querySelector("#submit");
-const form = document.querySelector("#form");
+const form = document.querySelector("#formLogin");
 const emailErrorElement = document.querySelector("#emailError");
 const passwordErrorElement = document.querySelector("#passwordError");
 const usernameErrorElement = document.querySelector("#usernameError");
 const rememberMe = document.querySelector(".lembrarDeMimInput");
 
+//criar uma classe para ler os erros
 const url = new URLSearchParams(window.location.search);
 const errorId = url.get("errorID");
 localStorage.clear()
@@ -66,3 +67,4 @@ form.addEventListener("input", () => {
         submitInput.disabled = true;
     }
 });
+
