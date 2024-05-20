@@ -20,7 +20,7 @@ class API {
             });
             
             if (response.ok) {
-                window.location.href = "../../html/main/home.html";
+                window.location.href = "../../html/home/home.html";
             } else {
                 const data = await response.json();
                 switch (true) {

@@ -1,0 +1,17 @@
+
+.trends ul,
+.who-to-follow ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.trends ul li,
+.who-to-follow ul li {
+    margin-bottom: 10px;
+}
+
+.trends ul li a,
+.who-to-follow ul li a {
+    text-decoration: none;
+    color: #1da1f2;
+}
