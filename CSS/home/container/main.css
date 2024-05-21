@@ -1,4 +1,3 @@
-
 .feed {
     width: 60%;
     padding: 20px;
@@ -8,8 +7,6 @@
     border-right: 1px solid #ccc;
     overflow-y: scroll;
 }
-
-
 
 .post-box {
     margin-bottom: 20px;

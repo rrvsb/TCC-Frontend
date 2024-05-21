@@ -69,9 +69,9 @@ form.addEventListener("submit", (e) => {
 })
 
 
-const clear = () => {
-    messagesDiv.textContent = ""
-}
+// const clear = () => {
+//     messagesDiv.textContent = ""
+// }
 
 // Receptor de mensagem do servidor
 socket.on("message", (data) => {

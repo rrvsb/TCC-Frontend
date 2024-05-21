@@ -13,7 +13,7 @@ modals {
 
 #modal-active {
     display: flex !important;
-    animation: modalUp 1.5s forwards;
+    animation: modalUp 1s forwards;
     position: relative;
     overflow: hidden;
 }
@@ -26,7 +26,7 @@ modals {
     25% {
         
         width: 40%;
-        height: 10%;
+        height: 5%;
     }
     60% {
         width: 40%;
@@ -56,7 +56,7 @@ modals {
     width: 40%;
     height: 90%;
     background-color: #fff;
-    border-radius: 25px;
+    border-radius: 7.5px;
     display: flex;
     flex-direction: column;
 }
@@ -104,6 +104,6 @@ modals {
 
 .notifications-modal .modal-content ul li{
     width: 100%;
-    min-height: 10%;
+    min-height: 12.5%;
     border-bottom: 1px #000 solid;
 }
