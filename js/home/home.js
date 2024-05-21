@@ -4,7 +4,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     const nickname = JSON.parse(nick)
     const api = new API(authToken)
-    const result = await api.findUser(nickname) 
+    const result = await api.findUser(nickname)
     const userInfo = JSON.stringify(result.returnedData)
     localStorage.setItem("userInfo", userInfo)
 })
@@ -20,4 +20,20 @@ notifies.addEventListener("click", () => {
 closeModal.addEventListener("click", () => {
     document.querySelector(".modals").style.display = "none"
     document.querySelector(".notifications-modal").id = ""
+})
+
+/*sections*/
+const exploreSection = document.querySelector(".explore-section-link");
+const feedSection = document.querySelector(".feed-section-link");
+
+exploreSection.addEventListener("click", () => {
+    document.querySelector(".explore-section").style.display = "block"
+    document.querySelector(".feed-section").style.display = "none"
+    document.querySelector(".sidebar-right").id = "sidebar-right-active"
+})
+
+feedSection.addEventListener("click", () => {
+    document.querySelector(".feed-section").style.display = "block"
+    document.querySelector(".explore-section").style.display = "none"
+    document.querySelector(".sidebar-right").id = ""
 })

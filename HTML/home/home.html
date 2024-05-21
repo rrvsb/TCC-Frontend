@@ -7,8 +7,10 @@
     <title>CodeSavvy home</title>
     <link rel="stylesheet" href="../../CSS/home/container/styles.css">
     <link rel="stylesheet" href="../../CSS/home/container/left-side.css">
+    <link rel="stylesheet" href="../../CSS/home/container/links.css">
     <link rel="stylesheet" href="../../CSS/home/container/rigth-side.css">
     <link rel="stylesheet" href="../../CSS/home/container/uiverse-css/like.css">
+    <link rel="stylesheet" href="../../CSS/home/container/uiverse-css/explore-search-bar.css">
     <link rel="stylesheet" href="../../CSS/home/modals/notifications/notifications.css">
     <link rel="stylesheet" href="../../CSS/home/container/main.css">
 </head>
@@ -17,12 +19,12 @@
     <div class="container">
         <aside class="sidebar-left">
             <logo>
-                <img src="../../assets/logo.png" alt="">
+                <img src="../../assets/logo-symbol.png" alt="">
             </logo>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Explore</a></li>
+                    <li><a href="#" class="feed-section-link">Home</a></li>
+                    <li><a href="#" class="explore-section-link">Explore</a></li>
                     <li><a href="#" class="notifications">Notifications</a></li>
                     <li><a href="../chat/chat.html">Messages</a></li>
                     <!-- talvel ? -->
@@ -32,7 +34,7 @@
             </nav>
             <div class="profile-container">
                 <div class="profile-pic">
-                    <img src="../../assets/logo.png" alt="">
+                    <img src="../../assets/logo-symbol.png" alt="">
                 </div>
                 <div class="profile-infos">
                     <p>Anderson</p>
@@ -42,7 +44,7 @@
         </aside>
 
         <main class="feed">
-            <section class="feed-section">
+            <section class="feed-section" id="feed-section-active">
                 <div class="post-box">
                     <textarea placeholder="What's happening?"></textarea>
                     <button>Postar</button>
@@ -95,7 +97,7 @@
                                             <polygon points="80,80 70,70"></polygon>
                                         </svg>
                                     </div>
-    
+
                                 </div><!--fechamento da heart-container-->
                                 <p>15 Curtidas</p>
                             </div>
@@ -105,7 +107,7 @@
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="post">
                         <div class="post-header">
                             <div class="post-profile-pic">
@@ -118,7 +120,7 @@
                             </div>
                         </div>
                         <div class="post-content">
-                            <img src="./assets/Sem título.png" alt="">
+                            <img src="../../assets/logo.png" alt="">
                         </div>
                         <div class="post-footer">
                             <div class="post-likes">
@@ -145,7 +147,7 @@
                                             <polygon points="80,80 70,70"></polygon>
                                         </svg>
                                     </div>
-    
+
                                 </div><!--fechamento da heart-container-->
                                 <p>15 Curtidas</p>
                             </div>
@@ -157,7 +159,140 @@
                     </div>
                 </div>
             </section>
-            <section class="explore-section">
+            <section class="explore-section" id="explore-section-active">
+                <div class="search">
+                    <form>
+                        <div class="InputContainer">
+                            <input type="text" name="text" class="input" id="input" placeholder="Search">
+
+                            <label for="input" class="labelforsearch">
+                                <svg viewBox="0 0 512 512" class="searchIcon">
+                                    <path
+                                        d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z">
+                                    </path>
+                                </svg>
+                            </label>
+                            <div class="border"></div>
+
+                            <button class="micButton"><svg viewBox="0 0 384 512" class="micIcon">
+                                    <path
+                                        d="M192 0C139 0 96 43 96 96V256c0 53 43 96 96 96s96-43 96-96V96c0-53-43-96-96-96zM64 216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 89.1 66.2 162.7 152 174.4V464H120c-13.3 0-24 10.7-24 24s10.7 24 24 24h72 72c13.3 0 24-10.7 24-24s-10.7-24-24-24H216V430.4c85.8-11.7 152-85.3 152-174.4V216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 70.7-57.3 128-128 128s-128-57.3-128-128V216z">
+                                    </path>
+                                </svg>
+                            </button>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="posts">
+                    <div class="post">
+                        <div class="post-header">
+                            <div class="post-profile-pic">
+                                <img src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg"
+                                    alt="">
+                            </div>
+                            <div class="post-profile-infos">
+                                <p>Anderson</p>
+                                <p>@Quantxz</p>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <p>Este é um exemplo de post.Este é um exemplo de post.Este é um exemplo de post.Este é um
+                                exemplo de post.Este é um exemplo de post.Este é um exemplo de post.Este é um exemplo de
+                                post.Este é um exemplo de post.Este é um exemplo de post.Este é um exemplo de post.Este
+                                é um exemplo de post.Este é um exemplo de post.Este é um exemplo de post.Este é um
+                                exemplo de post.Este é um exemplo de post.Este é um exemplo de post.Este é um exemplo de
+                                post.Este é um exemplo de post.Este é um exemplo de post.Este é um exemplo de post.Este
+                                é um exemplo de post.Este é um exemplo de post.Este é um exemplo de post.Este é um
+                                exemplo de post.Este é um exemplo de post.Este é um exemplo de post.Este é um exemplo de
+                                post.Este é um exemplo de post.</p>
+                        </div>
+                        <div class="post-footer">
+                            <div class="post-likes">
+                                <div class="heart-container" title="Like">
+                                    <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                                    <div class="svg-container">
+                                        <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                            </path>
+                                        </svg>
+                                        <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                            </path>
+                                        </svg>
+                                        <svg class="svg-celebrate" width="100" height="100"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <polygon points="10,10 20,20"></polygon>
+                                            <polygon points="10,50 20,50"></polygon>
+                                            <polygon points="20,80 30,70"></polygon>
+                                            <polygon points="90,10 80,20"></polygon>
+                                            <polygon points="90,50 80,50"></polygon>
+                                            <polygon points="80,80 70,70"></polygon>
+                                        </svg>
+                                    </div>
+
+                                </div><!--fechamento da heart-container-->
+                                <p>15 Curtidas</p>
+                            </div>
+                            <div class="post-comments">
+                                <ion-icon name="chatbubble-ellipses"></ion-icon>
+                                <p>Comentar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="post">
+                        <div class="post-header">
+                            <div class="post-profile-pic">
+                                <img src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg"
+                                    alt="">
+                            </div>
+                            <div class="post-profile-infos">
+                                <p>Anderson</p>
+                                <p>@Quantxz</p>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <p>...</p>
+                        </div>
+                        <div class="post-footer">
+                            <div class="post-likes">
+                                <div class="heart-container" title="Like">
+                                    <input type="checkbox" class="checkbox" id="Give-It-An-Id">
+                                    <div class="svg-container">
+                                        <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                            </path>
+                                        </svg>
+                                        <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                            </path>
+                                        </svg>
+                                        <svg class="svg-celebrate" width="100" height="100"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <polygon points="10,10 20,20"></polygon>
+                                            <polygon points="10,50 20,50"></polygon>
+                                            <polygon points="20,80 30,70"></polygon>
+                                            <polygon points="90,10 80,20"></polygon>
+                                            <polygon points="90,50 80,50"></polygon>
+                                            <polygon points="80,80 70,70"></polygon>
+                                        </svg>
+                                    </div>
+
+                                </div><!--fechamento da heart-container-->
+                                <p>15 Curtidas</p>
+                            </div>
+                            <div class="post-comments">
+                                <ion-icon name="chatbubble-ellipses"></ion-icon>
+                                <p>Comentar</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
 
@@ -195,6 +330,7 @@
         </div>
     </modals>
 
+    <script src="../../js/api/api-class.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

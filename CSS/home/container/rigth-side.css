@@ -1,3 +1,30 @@
+.sidebar-right {
+    display: none;
+}
+
+#sidebar-right-active {
+    position: relative;
+    display: block;
+    animation: sidebarPull 1s forwards;
+}
+
+@keyframes sidebarPull {
+    0% {
+        top: -50rem;
+    }
+    25% {
+        top: 0rem;
+    } 40% {
+        top: -2.5rem;
+    } 60% {
+        top: 0rem;
+    } 75% {
+        top: -0.5rem;
+    }
+    100% {
+        top: 0rem;
+    }
+}
 
 .trends ul,
 .who-to-follow ul {

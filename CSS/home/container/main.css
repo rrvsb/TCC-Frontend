@@ -1,11 +1,16 @@
 .feed {
-    width: 60%;
+    position: relative;
+    width: 100%;
     padding: 20px;
     box-sizing: border-box;
     background-color: #ffffff;
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
-    overflow-y: scroll;
+    overflow-y: auto;
+}
+
+.feed-section {
+    display: block;
 }
 
 .post-box {
@@ -70,7 +75,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 90%;
+    width: 70%;
     height: 90%;
     border-radius: 50%;
 }
@@ -134,4 +139,42 @@
 .post-footer .post-comments p{
     padding-left: 5px;
     font-weight: 520;
+}
+
+#feed-section-active,
+#explore-section-active {
+    position: relative;
+    animation: leftPush 1s forwards;
+}
+
+@keyframes leftPush {
+    0% {
+        left: -150rem;
+    }
+    25% {
+        left: 0rem;
+    } 40% {
+        left: -2.5rem;
+    } 60% {
+        left: 0rem;
+    } 75% {
+        left: -0.5rem;
+    }
+    100% {
+        left: 0rem;
+    }
+}
+
+/* explore section  */
+
+main .explore-section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+main .explore-section .search {
+    width: 100%;
+    position: relative;
 }
