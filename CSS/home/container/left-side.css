@@ -1,12 +1,11 @@
 logo {
     display: flex;
     position: relative;
-    width: 100%;
+    width: 250px;
     height: 25vh;
     z-index: 100;
     align-items: center;
     justify-content: center;
-    left: -1.5vw;
 }
 
 logo img {
