@@ -35,7 +35,7 @@ main {
     align-items: center;
     background-color: transparent;
     width: 50%;
-    height: 80%;
+    height: 90%;
     box-shadow: 5px 5px 10px 5px #A1C7FA;
     border-radius: 5px;
     
@@ -74,7 +74,7 @@ button {
    }
    
    button.learn-more {
-    width: 12rem;
+    width: 14rem;
     height: auto;
    }
    
@@ -149,3 +149,89 @@ button {
    
 
 /*BOTAO FINAL*/
+
+.sectionTexto 
+{
+    width: 60%;
+    height: 100%;
+    margin-left: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.primeira
+{
+    background-color: transparent;
+    width: 80%;
+    height: 45%;
+    position: absolute;
+    top: 48px;
+    right: 15%;
+    box-shadow: 5px 5px 10px 5px #A1C7FA;
+    border-radius: 5px;
+    padding: 10px 40px;
+}
+
+.segunda
+{
+    position: absolute;
+    top: 55%;
+    right: 15%;
+    background-color: transparent;
+    width: 80%;
+    height: 40%;   
+    box-shadow: 5px 5px 10px 5px #A1C7FA;
+    border-radius: 5px; 
+}
+
+.primeira form
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+}
+.primeira label
+{
+    margin-bottom: 4px;
+    font-size: 12pt;
+}
+
+.primeira input
+{
+    height: 30px;
+    border: 0;
+    padding: 10px;
+    outline: none;
+    font-size: 10pt;
+    margin-bottom: 20px;
+    transition:  all 0.5s ;
+
+}
+
+.primeira input:focus{
+    border-radius: 10px; 
+    border: 1px solid blue;
+}
+
+.primeira textarea
+{
+    border: 0;
+    padding: 10px;
+    outline: none;
+    font-size: 10pt;
+    margin-bottom: 20px;
+    transition:  all 0.5s ;
+}
+
+.primeira textarea:focus
+{
+    border-radius: 10px;
+    border: 1px solid blue;
+}
+
+.btn
+{
+    width: 80px;
+    height: 80px;
+}
