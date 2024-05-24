@@ -10,8 +10,11 @@
     <link rel="stylesheet" href="../../CSS/home/container/links.css">
     <link rel="stylesheet" href="../../CSS/home/container/rigth-side.css">
     <link rel="stylesheet" href="../../CSS/home/container/uiverse-css/like.css">
+    <link rel="stylesheet" href="../../CSS/home/container/uiverse-css/file-input.css">
     <link rel="stylesheet" href="../../CSS/home/container/uiverse-css/explore-search-bar.css">
     <link rel="stylesheet" href="../../CSS/home/modals/notifications/notifications.css">
+    <link rel="stylesheet" href="../../CSS/home/modals/modal.css">
+    <link rel="stylesheet" href="../../CSS/home/modals/post/post-modal.css">
     <link rel="stylesheet" href="../../CSS/home/container/main.css">
 </head>
 
@@ -45,10 +48,6 @@
 
         <main class="feed">
             <section class="feed-section" id="feed-section-active">
-                <div class="post-box">
-                    <textarea placeholder="What's happening?"></textarea>
-                    <button>Postar</button>
-                </div>
                 <div class="posts">
                     <div class="post">
                         <div class="post-header">
@@ -62,6 +61,7 @@
                             </div>
                         </div>
                         <div class="post-content">
+                            <p class="title">!Mano como isso é possivel ?</p>
                             <p>Este é um exemplo de post.Este é um exemplo de post.Este é um exemplo de post.Este é um
                                 exemplo de post.Este é um exemplo de post.Este é um exemplo de post.Este é um exemplo de
                                 post.Este é um exemplo de post.Este é um exemplo de post.Este é um exemplo de post.Este
@@ -120,6 +120,7 @@
                             </div>
                         </div>
                         <div class="post-content">
+                            <p class="title">!Mano como isso é possivel ?</p>
                             <img src="../../assets/logo.png" alt="">
                         </div>
                         <div class="post-footer">
@@ -327,6 +328,22 @@
                     <li></li>
                 </ul>
             </div><!--fechamento modal-content-->
+        </div>
+        <div class="post-modal">
+            <div class="modal-header">
+                <p>Faça um post</p>
+                <ion-icon name="close-outline" id="close-modal"></ion-icon>
+            </div><!--fechamento modal-header-->
+            <div class="modal-content">
+                <form>
+                    <label for="title">Titulo da publicação</label>
+                    <input type="text" id="title">
+                    <label for="input-modal-post-content">Conteudo</label>
+                    <input type="text" id="input-modal-post-content">
+                    <img src="" id="imagePreview" alt="Imagem selecionada">
+                    <input type="file" class="custom-file-input">
+                </form>
+            </div>
         </div>
     </modals>
 

@@ -37,3 +37,22 @@ feedSection.addEventListener("click", () => {
     document.querySelector(".explore-section").style.display = "none"
     document.querySelector(".sidebar-right").id = ""
 })
+
+document.addEventListener("DOMContentLoaded", function() {
+    const fileInput = document.querySelector(".custom-file-input")
+    const conteudoInput = document.getElementById('input-modal-post-content');
+    const imagePreview = document.getElementById('imagePreview');
+    
+    fileInput.addEventListener('change', function() {
+        conteudoInput.style.display = "none"
+        if (this.files && this.files[0]) {
+            const reader = new FileReader();
+            
+            reader.onload = function(e) {
+                imagePreview.src = e.target.result;
+            }
+            
+            reader.readAsDataURL(this.files[0]);
+        }
+    });
+});
