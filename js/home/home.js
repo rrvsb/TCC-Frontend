@@ -10,16 +10,26 @@ window.addEventListener("DOMContentLoaded", async () => {
 })
 
 const notifies = document.querySelector(".notifications");
-const closeModal = document.querySelector("#close-modal");
+const doPosts = document.querySelector(".do-a-post");
+const closeModal = document.querySelectorAll("#close-modal");
 
 notifies.addEventListener("click", () => {
     document.querySelector(".modals").style.display = "flex"
     document.querySelector(".notifications-modal").id = "modal-active"
 })
 
-closeModal.addEventListener("click", () => {
-    document.querySelector(".modals").style.display = "none"
-    document.querySelector(".notifications-modal").id = ""
+doPosts.addEventListener("click", () => {
+    document.querySelector(".modals").style.display = "flex"
+    document.querySelector(".post-modal").id = "post-modal-active"
+})
+
+closeModal.forEach(item => {
+    item.addEventListener("click", () => {
+        document.querySelector(".modals").style.display = "none"
+        document.querySelectorAll(".modal").forEach(item => {
+            item.id = ""
+        })
+    })
 })
 
 /*sections*/
@@ -38,21 +48,23 @@ feedSection.addEventListener("click", () => {
     document.querySelector(".sidebar-right").id = ""
 })
 
-document.addEventListener("DOMContentLoaded", function() {
-    const fileInput = document.querySelector(".custom-file-input")
-    const conteudoInput = document.getElementById('input-modal-post-content');
-    const imagePreview = document.getElementById('imagePreview');
-    
-    fileInput.addEventListener('change', function() {
-        conteudoInput.style.display = "none"
-        if (this.files && this.files[0]) {
-            const reader = new FileReader();
-            
-            reader.onload = function(e) {
-                imagePreview.src = e.target.result;
-            }
-            
-            reader.readAsDataURL(this.files[0]);
-        }
-    });
-});
+// ajustar depois
+// const imageInput = document.querySelector('input[type="file"]');
+// const modalContent = document.querySelector('.modal-content');
+
+// imageInput.addEventListener('change', function(event) {
+//     const file = event.target.files[0];
+//     if (file && file.type.startsWith('image/')) {
+//         const img = document.createElement('img');
+//         img.src = URL.createObjectURL(file);
+
+//         // Remove qualquer imagem anterior, se houver
+//         const existingImg = modalContent.querySelector('img');
+//         if (existingImg) {
+//             modalContent.removeChild(existingImg);
+//         }
+
+//         // Adiciona a nova imagem
+//         modalContent.appendChild(img);
+//     }
+// });
