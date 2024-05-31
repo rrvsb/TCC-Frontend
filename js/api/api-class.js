@@ -3,10 +3,10 @@ class API {
     constructor(token) {
         this.token = token
     }
-
+//https://tcc-u2qf.onrender.com
     async loginRequest(username, password, email) {
         try {
-            const response = await fetch("https://tcc-u2qf.onrender.com/users/login", {
+            const response = await fetch("http://localhost:3000/users/login", {
                 method: "POST",
                 body: JSON.stringify({
                     nickname: username,
@@ -18,7 +18,7 @@ class API {
                     "Authorization": this.token
                 }
             });
-            
+
             if (response.ok) {
                 window.location.href = "../../html/home/home.html";
             } else {
@@ -62,7 +62,7 @@ class API {
     }
 
     async findUser(username) {
-        const url = "https://tcc-u2qf.onrender.com/users/" + username
+        const url = "http://localhost:3000/users/" + username
         const response = await fetch(url, {
             method: "GET",
             headers: {
@@ -72,5 +72,98 @@ class API {
         });
         const data = response.json()
         return data
+    }
+
+    async Post(data, file) {
+        try {
+            const formData = new FormData();
+            formData.append('title', data.title);
+            formData.append('content', file || data.content);
+            formData.append('userNickname', data.userNickname);
+
+            const response = await fetch(`http://localhost:3000/posts/create`, {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok) {
+                // Chame a função de renderização aqui, se necessário
+                console.log('Post criado com sucesso');
+            } else {
+                const responseData = await response.json();
+                window.alert('Ops! parece que estamos com um erro em nossos servidores.\nTente novamente em alguns minutos');
+                console.error('Erro:', responseData);
+            }
+        } catch (error) {
+            console.error('Erro na requisição:', error);
+        }
+    }
+
+    async PostFind() {
+        try {
+            const response = await fetch(`http://localhost:3000/posts/get-all`);
+            if (!response.ok) {
+                throw new Error('Erro ao buscar posts');
+            }
+            const posts = await response.json();
+            return posts;
+        } catch (error) {
+            console.error('Erro na requisição:', error);
+        }
+    }
+
+    async findUniquePost(id) {
+        try {
+            const response = await fetch(`http://localhost:3000/posts/post/${id}`);
+            if (!response.ok) {
+                throw new Error('Erro ao buscar post');
+            }
+            const post = await response.json();
+            console.log(post)
+            return post;
+        } catch (error) {
+            console.error('Erro na requisição:', error);
+        }
+    }
+
+    async PostLike(data) {
+        try {
+                 
+            const response = await fetch(`http://localhost:3000/posts/likes?type=Post&reqType=like`, {
+                method: "PATCH",
+                body: JSON.stringify(data),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error('Erro ao buscar posts');
+            }
+            const postLiked = await response.json();
+            return postLiked;
+        } catch (error) {
+            console.error('Erro na requisição:', error);
+        }
+    }
+
+    async PostUnlike(data) {
+        try {
+
+            const response = await fetch(`http://localhost:3000/posts/likes?type=Post&reqType=unlike`, {
+                method: "PATCH",
+                body: JSON.stringify(data),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+            if (!response.ok) {
+                throw new Error('Erro ao buscar posts');
+            }
+            const postUnliked = await response.json();
+            return postUnliked;
+        } catch (error) {
+            console.error('Erro na requisição:', error);
+        }
     }
 }

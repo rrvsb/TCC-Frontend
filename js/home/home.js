@@ -48,23 +48,43 @@ feedSection.addEventListener("click", () => {
     document.querySelector(".sidebar-right").id = ""
 })
 
-// ajustar depois
-// const imageInput = document.querySelector('input[type="file"]');
-// const modalContent = document.querySelector('.modal-content');
+/*posts*/
+const clearButton = document.querySelector(".clear-button");
+const contentInput = document.querySelector("#input-modal-post-content");
+const postMenu = document.querySelector(".post-menu");
+const fileInput = document.getElementById('file-input');
+document.getElementById('file-input').addEventListener('change', function(event) {
+    const file = event.target.files[0];
 
-// imageInput.addEventListener('change', function(event) {
-//     const file = event.target.files[0];
-//     if (file && file.type.startsWith('image/')) {
-//         const img = document.createElement('img');
-//         img.src = URL.createObjectURL(file);
 
-//         // Remove qualquer imagem anterior, se houver
-//         const existingImg = modalContent.querySelector('img');
-//         if (existingImg) {
-//             modalContent.removeChild(existingImg);
-//         }
+    if (file) {
+        const reader = new FileReader();
+        
+        reader.onload = function(e) {
+            contentInput.style.backgroundImage = `url(${e.target.result})`;
+            contentInput.style.backgroundSize = 'cover'; // Ajusta o tamanho da imagem para cobrir o input
+            contentInput.style.backgroundPosition = 'center'; // Centraliza a imagem
+            contentInput.style.height = "15rem";
+            contentInput.setAttribute('readonly', true);
+            document.querySelector("#post-modal-active").style.height = "90rem"
+            postMenu.id = "post-modal-menu-image-active"
+            clearButton.style.display = "flex"
+        };
 
-//         // Adiciona a nova imagem
-//         modalContent.appendChild(img);
-//     }
-// });
+        reader.readAsDataURL(file);
+
+        console.log('File name:', file.name);
+        console.log('File size:', file.size);
+        console.log('File type:', file.type);
+    }
+});
+
+clearButton.addEventListener("click", () => {
+    fileInput.value = ""
+    contentInput.style.backgroundImage = ``;
+    contentInput.style.height = `10%`;
+    contentInput.setAttribute('readonly', false);
+    document.querySelector("#post-modal-active").style.height = "70%"
+    postMenu.id = ""
+    clearButton.style.display = "none"
+})

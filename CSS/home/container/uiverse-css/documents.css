@@ -70,9 +70,8 @@
     transform: rotateX(30deg);
 }
 
-/* menu inferior */
-
 .button-container {
+    position: relative;
     display: flex;
     background-color: #A1C7FA;
     width: 100%;
@@ -124,13 +123,14 @@
 
 .tooltip input {
     position: absolute;
-    width: 3%;
+    width: 15%;
     opacity: 0;
     z-index: 9;
     cursor: pointer !important;
 }
 
 .tooltip p  {
+    width: 90%;
     display: none;
     text-align: center;
 } 
@@ -147,7 +147,7 @@
     position: absolute;
     top: 3rem;
     transition: 2s;
-} 
+}
 
 .tooltip input:hover ~ .button {
     transform: translateY(-3px);

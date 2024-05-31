@@ -111,11 +111,61 @@
     transform: translate(3px, 3px);
 }
 
+.clear-button {
+    position: absolute;
+    width: 2.5vw;
+    height: 2.5vw;
+    border-radius: 50%;
+    right: 5%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 10px 10px 10px #00000018;
+    cursor: pointer;
+    background-color: #d8d2d22a;
+}
+
+.clear-button > .tooltip{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.clear-button > .tooltip > button:hover ~ p {
+    display: block;
+    position: absolute;
+    width: 5rem;
+    height: 100%;
+    top: 3rem;
+    transition: 2s;
+} 
+
+.clear-button > .tooltip > button:hover > svg {
+    transform: translateY(-3px);
+    transition: 0.6s;
+} 
+
+
+.clear-button > .tooltip > svg{
+    filter: blur(10px);
+}
+
+
 #post-modal-active {
     display: flex !important;
     animation: modalUp 1s forwards;
     position: relative;
     overflow: hidden;
+}
+
+.post-menu {
+    position: relative;
+    top: 0;
+}
+
+#post-modal-menu-image-active {
+    position: relative;
+    top: 5rem !important;
 }
 
 @keyframes modalUp {
@@ -138,6 +188,16 @@
     }
     100% {
         width: 40%;
-        height: 70%;
+        min-height: 70%;
+    }
+}
+
+@keyframes menuDown {
+    0% {
+        position: relative;
+        top: 0rem;
+    } 100% {
+        position: relative;
+        top: 5rem !important;
     }
 }
