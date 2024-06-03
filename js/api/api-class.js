@@ -1,12 +1,11 @@
-class API {
-    token;
-    constructor(token) {
-        this.token = token
+class API extends ENV{
+    constructor() {
+        super()
     }
 //https://tcc-u2qf.onrender.com
     async loginRequest(username, password, email) {
         try {
-            const response = await fetch("http://localhost:3000/users/login", {
+            const response = await fetch(`${this.url}/users/login`, {
                 method: "POST",
                 body: JSON.stringify({
                     nickname: username,
@@ -15,7 +14,7 @@ class API {
                 }),
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": this.token
+                    "Authorization": ENV.authToken
                 }
             });
 
@@ -61,13 +60,42 @@ class API {
         }
     }
 
+    async registerUser(name, surname, nickname, email, password, confirmPassword) {
+        if (name !== "" && password !== "" && email !== "" && surname !== "" && nickname !== "" && password === confirmPassword) {
+
+            try {
+                const response = await fetch(`${this.url}/users/register`, {
+                    method: "POST",
+                    body: JSON.stringify({
+                        name,
+                        surname,
+                        email,
+                        password,
+                        nickname
+                      }),     
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": ENV.authToken
+                    }
+                });
+    
+                const data = await response.json();
+                console.log(data)
+                window.location.href = "../../html/home/home.html";
+            } catch (error) {
+                console.error("Erro na requisição:", error);
+                // Lidar com erro na requisição
+            }
+        }
+    }
+
     async findUser(username) {
-        const url = "http://localhost:3000/users/" + username
+        const url = `${this.url}/users/` + username
         const response = await fetch(url, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": this.token
+                "Authorization": ENV.authToken
             }
         });
         const data = response.json()
