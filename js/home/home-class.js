@@ -1,4 +1,5 @@
 class HomeFunctions {
+    apiClass = new API();
     *postsGenerator(postsArray) {
         let count = 0;
         let postsBatch = [];
@@ -17,10 +18,17 @@ class HomeFunctions {
         }
     }
 
+    async updatePost(id) {
+        const post = await this.apiClass.findUniquePost(id);
+        const postLikes = JSON.parse(JSON.stringify(post))
+        document.querySelector(`.postLikeId${id}`).innerHTML = `${postLikes.likes} Curtidas`
+    }
+    
     renderPost(data) {
         const postElement = document.createElement('div');
         postElement.classList.add("post")
-        postElement.setAttribute('metadata', JSON.stringify({id: data.id, createdAt: data.createdAt, type: data.type}))
+        postElement.setAttribute('metadata', JSON.stringify({ id: data.id, createdAt: data.createdAt, type: data.type }));
+        postElement.setAttribute('data-likes', data.likes || 0);
         postElement.innerHTML = `
             <div class="post-header">
                 <div class="post-profile-pic">
@@ -39,7 +47,7 @@ class HomeFunctions {
             <div class="post-footer">
                 <div class="post-likes">
                     <div class="heart-container" title="Like">
-                        <input type="checkbox" class="checkbox likeCheckbox" id="Give-It-An-Id">
+                        <input type="checkbox" class="checkbox likeCheckbox" id="Give-It-An-Id postInputCheckId${data.id}">
                         <div class="svg-container">
                             <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -63,14 +71,37 @@ class HomeFunctions {
                         </div>
 
                     </div><!--fechamento da heart-container-->
-                    <p>${data.likes} Curtidas</p>
+                    <p class='postLikes postLikeId${data.id} likes${data.likes}' value=${data.likes}>${data.likes} Curtidas</p>
                 </div>
                 <div class="post-comments">
                     <ion-icon name="chatbubble-ellipses"></ion-icon>
                     <p>Comentar</p>
                 </div>
             </div>`;
+        const postsContainer = document.querySelector('.posts');
+        const allPosts = Array.from(postsContainer.querySelectorAll('.post'));
+
+
+        allPosts.sort((a, b) => {
+            const likesA = parseInt(a.getAttribute('data-likes')) || 0;
+            const likesB = parseInt(b.getAttribute('data-likes')) || 0;
+            return likesB - likesA;
+        });
+
+
+        allPosts.forEach(post => postsContainer.removeChild(post));
+
+
+        allPosts.forEach(post => postsContainer.appendChild(post));
         document.querySelector('.posts').appendChild(postElement)
+
+        const datda = {
+            author: data.author,
+            postId: data.id
+        }
+
+        this.apiClass.findLikedPost(datda);
+
     }
 
 }

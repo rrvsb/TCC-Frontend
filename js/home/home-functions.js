@@ -25,10 +25,15 @@ document.addEventListener("DOMContentLoaded", async () => {
                 userNickname
             }
 
+            const likedTable = {
+                author: userNickname,
+                postId: id
+            }
+
             if (e.target.checked) {
-                apiClass.PostLike(data); // Envia os dados para a função PostLike
+                apiClass.PostLike(data, likedTable); // Envia os dados para a função PostLike
             } else {
-                apiClass.PostUnlike(data); // Envia os dados para a função PostUnlike
+                apiClass.PostUnlike(data, likedTable); // Envia os dados para a função PostUnlike
             }
         });
     });
