@@ -17,9 +17,13 @@ document.addEventListener("DOMContentLoaded", async () => {
                 const metadata = postElement.getAttribute('metadata'); // Obtém o valor do atributo 'metadata'
                 const metadataObj = JSON.parse(metadata); // Converte a string JSON em um objeto JavaScript
                 const id = metadataObj.id; // Obtém o ID da metadata
-    
-                //Dar um jeito do mesmo usuario não poder dar like duas vezes
 
+                const postLikesDiv = document.querySelector('.post-likes');
+                const likesMetadata = postLikesDiv.getAttribute('metadata');
+                const likesMetadataObj = JSON.parse(likesMetadata); // Converte a string JSON em um objeto JavaScript
+                const postLikedId = likesMetadataObj.id; // Obtém o ID da metadata
+                //Dar um jeito do mesmo usuario não poder dar like duas vezes
+                console.log(likesMetadataObj)
                 const data = {
                     id,
                     title,
@@ -31,11 +35,17 @@ document.addEventListener("DOMContentLoaded", async () => {
                     author: userNickname,
                     postId: id
                 }
+    
+                const unlikedTable = {
+                    id: postLikedId,
+                    author: userNickname,
+                    postId: id
+                }
         
                 if (e.target.checked) {
                     apiClass.PostLike(data, likedTable); // Envia os dados para a função PostLike
                 } else {
-                    apiClass.PostUnlike(data, likedTable); // Envia os dados para a função PostUnlike
+                    apiClass.PostUnlike(data, unlikedTable); // Envia os dados para a função PostUnlike
                 }
             });
         });

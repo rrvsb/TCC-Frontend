@@ -78,7 +78,8 @@ class HomeFunctions {
                     <p>Comentar</p>
                 </div>
             </div>`;
-        
+        const postLikesDiv = document.querySelector('.post-likes');
+        postLikesDiv.setAttribute("metadata", JSON.stringify({likedID: data.attributes.likedPostMetadata.id}))
         const postsContainer = document.querySelector('.posts');
         postsContainer.appendChild(postElement);
     

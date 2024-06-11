@@ -136,6 +136,7 @@ class API extends ENV {
                 throw new Error('Erro ao buscar posts');
             }
             const posts = await response.json();
+            
             return posts;
         } catch (error) {
             console.error('Erro na requisição:', error);
@@ -178,6 +179,7 @@ class API extends ENV {
                     "Content-Type": "application/json"
                 }
             });
+
             functions.updatePost(data.id)
 
             if (!response.ok) {
@@ -192,7 +194,7 @@ class API extends ENV {
 
     async PostUnlike(data, likedPostsData) {
         try {
-
+            console.log(likedPostsData)
             const response = await fetch(`http://localhost:3000/posts/likes?type=Post&reqType=unlike`, {
                 method: "PATCH",
                 body: JSON.stringify(data),
@@ -211,12 +213,13 @@ class API extends ENV {
             functions.updatePost(data.id)
 
             if (!response.ok) {
-                throw new Error('Erro ao buscar posts');
+                console.log("a\n")
+                throw new Error('Erro ao buscar posts\n');
             }
             const postUnliked = await response.json();
             return postUnliked;
         } catch (error) {
-            console.error('Erro na requisição:', error);
+            console.error('Erro na requisição:', error, "\n");
         }
     }
 
@@ -231,7 +234,7 @@ class API extends ENV {
             });
             const responseData = await response.json();
 
-            if (responseData.postInfo == true) {
+            if (responseData.postInfo.booleanValue == true) {
                 return true
             } else {
                 return false
