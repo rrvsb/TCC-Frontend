@@ -1,10 +1,10 @@
-class API extends ENV{
+class API extends ENV {
 
     constructor() {
         super()
     }
-    
-//https://tcc-u2qf.onrender.com
+
+    //https://tcc-u2qf.onrender.com
     async loginRequest(username, password, email) {
         try {
             const response = await fetch(`${this.url}/users/login`, {
@@ -74,13 +74,13 @@ class API extends ENV{
                         email,
                         password,
                         nickname
-                      }),     
+                    }),
                     headers: {
                         "Content-Type": "application/json",
                         "Authorization": ENV.authToken
                     }
                 });
-    
+
                 const data = await response.json();
                 console.log(data)
                 window.location.href = "../../html/home/home.html";
@@ -104,23 +104,23 @@ class API extends ENV{
         return data
     }
 
-    async Post(data, file) {
+    async Post(data) {
         try {
             const formData = new FormData();
             formData.append('title', data.title);
-            formData.append('content', file || data.content);
+            formData.append('content', data.content); // Assumindo que data.content é um File
             formData.append('userNickname', data.userNickname);
 
             const response = await fetch(`http://localhost:3000/posts/create`, {
                 method: 'POST',
                 body: formData
             });
-
+            const responseData = await response.json();
+            console.log(responseData)
             if (response.ok) {
                 // Chame a função de renderização aqui, se necessário
                 console.log('Post criado com sucesso');
             } else {
-                const responseData = await response.json();
                 window.alert('Ops! parece que estamos com um erro em nossos servidores.\nTente novamente em alguns minutos');
                 console.error('Erro:', responseData);
             }
@@ -149,8 +149,8 @@ class API extends ENV{
                 throw new Error('Erro ao buscar post');
             }
             const post = await response.json();
-            
-        
+
+
             return post;
         } catch (error) {
             console.error('Erro na requisição:', error);
@@ -158,8 +158,9 @@ class API extends ENV{
     }
 
     async PostLike(data, likedPostsData) {
+
         try {
-                 
+
             const response = await fetch(`http://localhost:3000/posts/likes?type=Post&reqType=like`, {
                 method: "PATCH",
                 body: JSON.stringify(data),
@@ -167,7 +168,9 @@ class API extends ENV{
                     "Content-Type": "application/json"
                 }
             });
-            console.log(JSON.stringify(likedPostsData))
+          
+
+            /* Atualiza se o post foi marcado com like ou não no backend*/
             const postLikedTable = await fetch(`http://localhost:3000/posts/likedPosts?type=like`, {
                 method: "PATCH",
                 body: JSON.stringify(likedPostsData),
@@ -218,20 +221,24 @@ class API extends ENV{
     }
 
     async findLikedPost(data) {
-        const response = await fetch(`${this.url}/posts/likedPosts`, {
-            method: "POST",
-            body: JSON.stringify(data),
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
-        const responseData = await response.json();
+        try {
+            const response = await fetch(`${this.url}/posts/likedPosts`, {
+                method: "POST",
+                body: JSON.stringify(data),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+            const responseData = await response.json();
 
-        if(responseData.postStatus == true) {
-            document.querySelector(`.postLikeId${data.postId}`).checked = true
-            console.log("aba")
-        } else {
-            document.querySelector(`.postLikeId${data.postId}`).checked = true
+            if (responseData.postInfo == true) {
+                return true
+            } else {
+                return false
+            }
+
+        } catch (error) {
+            console.error('Error in findLikedPost:', error);
         }
     }
 }

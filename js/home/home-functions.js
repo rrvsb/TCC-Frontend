@@ -6,51 +6,53 @@ document.addEventListener("DOMContentLoaded", async () => {
     const posts  = await apiClass.PostFind();
     functions.postsGenerator(posts).next();
     const likesInput = document.querySelectorAll('.checkbox');
-    likesInput.forEach(input => {
-        input.addEventListener('change', (e) => {
-            const postElement = e.target.closest('.post'); // Encontra o elemento pai com a classe 'post'
-            const title = postElement.querySelector('.title').textContent; // Recupera o título do post
-            const content = postElement.querySelector('.post-content p:last-child').textContent; // Recupera o conteúdo do post
-            const userNickname = postElement.querySelector('.post-profile-infos p:last-child').textContent.slice(1); // Recupera o nickname do usuário
-            const metadata = postElement.getAttribute('metadata'); // Obtém o valor do atributo 'metadata'
-            const metadataObj = JSON.parse(metadata); // Converte a string JSON em um objeto JavaScript
-            const id = metadataObj.id; // Obtém o ID da metadata
 
-            //atualizar em tempo real os likes e dar um jeito do mesmo usuario não poder dar like duas vezes
-            
-            const data = {
-                id,
-                title,
-                content,
-                userNickname
-            }
+    setTimeout(() => {
+        likesInput.forEach(input => {
+            input.addEventListener('change', (e) => {
+                const postElement = e.target.closest('.post'); // Encontra o elemento pai com a classe 'post'
+                const title = postElement.querySelector('.title').textContent; // Recupera o título do post
+                const content = postElement.querySelector('.post-content p:last-child').textContent; // Recupera o conteúdo do post
+                const userNickname = postElement.querySelector('.post-profile-infos p:last-child').textContent.slice(1); // Recupera o nickname do usuário
+                const metadata = postElement.getAttribute('metadata'); // Obtém o valor do atributo 'metadata'
+                const metadataObj = JSON.parse(metadata); // Converte a string JSON em um objeto JavaScript
+                const id = metadataObj.id; // Obtém o ID da metadata
+    
+                //Dar um jeito do mesmo usuario não poder dar like duas vezes
 
-            const likedTable = {
-                author: userNickname,
-                postId: id
-            }
-
-            if (e.target.checked) {
-                apiClass.PostLike(data, likedTable); // Envia os dados para a função PostLike
-            } else {
-                apiClass.PostUnlike(data, likedTable); // Envia os dados para a função PostUnlike
-            }
+                const data = {
+                    id,
+                    title,
+                    content,
+                    userNickname
+                }
+    
+                const likedTable = {
+                    author: userNickname,
+                    postId: id
+                }
+        
+                if (e.target.checked) {
+                    apiClass.PostLike(data, likedTable); // Envia os dados para a função PostLike
+                } else {
+                    apiClass.PostUnlike(data, likedTable); // Envia os dados para a função PostUnlike
+                }
+            });
         });
-    });
+    }, 1000)
 })
 
 
 postForm.addEventListener('submit', async (e) => {
     e.preventDefault(); 
-
-    const data = {
-        title: document.querySelector('#title').value,
-        content: document.querySelector('#input-modal-post-content').value,
-        userNickname: localStorage.getItem("userNickname")
-    };
-
     const fileInput = document.querySelector('#file-input'); 
     const file = fileInput.files[0];
 
-    await apiClass.Post(data, file);
-})
+    const data = {
+        title: document.querySelector('#title').value,
+        content: file ? file : document.querySelector('#input-modal-post-content').value,
+        userNickname: localStorage.getItem("userNickname")
+    };
+
+    await apiClass.Post(data);
+});

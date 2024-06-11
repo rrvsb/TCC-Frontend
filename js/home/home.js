@@ -82,10 +82,11 @@ document.getElementById('file-input').addEventListener('change', function(event)
 });
 
 clearButton.addEventListener("click", () => {
+    contentInput.setAttribute('readonly', false);
+    contentInput.setAttribute('disabled', false);
     fileInput.value = ""
     contentInput.style.backgroundImage = ``;
     contentInput.style.height = `10%`;
-    contentInput.setAttribute('readonly', false);
     document.querySelector("#post-modal-active").style.height = "70%"
     postMenu.id = ""
     clearButton.style.display = "none"
