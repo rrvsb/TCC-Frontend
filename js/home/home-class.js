@@ -83,14 +83,10 @@ class HomeFunctions {
 
         // Reordenar os posts com base nos likes
         const allPosts = Array.from(postsContainer.querySelectorAll('.post'));
-        allPosts.sort((a, b) => {
-            const likesA = parseInt(a.getAttribute('data-likes')) || 0;
-            const likesB = parseInt(b.getAttribute('data-likes')) || 0;
-            return likesB - likesA;
-        });
         const postLikesDiv = document.querySelectorAll('.post-likes');
         const a = Array.from(document.querySelectorAll('.post-likes')).find(item => item.id === `UniqueValueIdentifier${data.id}`);
 
+        /*invertigar se nã9o tem a ver com o momento ou a hierarquia em que renderizo o metadata do item*/
         postLikesDiv.forEach(item => {
             const likedId = data.attributes.likedPostMetadata ? data.attributes.likedPostMetadata.id : null;
             if (likedId) {
@@ -102,15 +98,14 @@ class HomeFunctions {
         // Remove todos os posts e adiciona na ordem correta
         postsContainer.innerHTML = '';
         allPosts.forEach(post => postsContainer.appendChild(post));
+        allPosts.forEach(async (item) => {
+            // Verifica se o post já foi curtido e atualiza o estado do checkbox
+            const postAlreadyLiked = await this.apiClass.findLikedPost(dataa);
+            const checkbox = document.querySelector(`#postInputCheckId${data.id}`);
+            checkbox.checked = postAlreadyLiked == true ? true : false
+        })
 
 
-
-        // Verifica se o post já foi curtido e atualiza o estado do checkbox
-        const postAlreadyLiked = await this.apiClass.findLikedPost(dataa);
-
-        const checkbox = document.querySelector(`#postInputCheckId${data.id}`);
-   
-        checkbox.checked = postAlreadyLiked === true ? true : false
     }
 
 }
