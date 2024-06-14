@@ -235,8 +235,10 @@ class API extends ENV {
             const responseData = await response.json();
 
             if (responseData.postInfo.booleanValue == true) {
+                console.log(responseData.postInfo.booleanValue)
                 return true
             } else {
+                console.log(responseData.postInfo.booleanValue)
                 return false
             }
 

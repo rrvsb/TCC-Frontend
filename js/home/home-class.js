@@ -29,12 +29,12 @@ class HomeFunctions {
         postElement.classList.add("post");
         postElement.setAttribute('metadata', JSON.stringify({ id: data.id, createdAt: data.createdAt, type: data.type }));
         postElement.setAttribute('data-likes', data.likes || 0);
-    
+
         const dataa = {
             author: data.author,
             postId: data.id
         };
-    
+
         // Renderiza o post sem aguardar a verificação de "like"
         postElement.innerHTML = `
             <div class="post-header">
@@ -51,7 +51,7 @@ class HomeFunctions {
                 <p>${data.content}</p>
             </div>
             <div class="post-footer">
-                <div class="post-likes">
+                <div class="post-likes" id="UniqueValueIdentifier${data.id}">
                     <div class="heart-container" title="Like">
                         <input type="checkbox" class="checkbox likeCheckbox" id="postInputCheckId${data.id}">
                         <div class="svg-container">
@@ -78,11 +78,9 @@ class HomeFunctions {
                     <p>Comentar</p>
                 </div>
             </div>`;
-        const postLikesDiv = document.querySelector('.post-likes');
-        postLikesDiv.setAttribute("metadata", JSON.stringify({likedID: data.attributes.likedPostMetadata.id}))
         const postsContainer = document.querySelector('.posts');
         postsContainer.appendChild(postElement);
-    
+
         // Reordenar os posts com base nos likes
         const allPosts = Array.from(postsContainer.querySelectorAll('.post'));
         allPosts.sort((a, b) => {
@@ -90,15 +88,29 @@ class HomeFunctions {
             const likesB = parseInt(b.getAttribute('data-likes')) || 0;
             return likesB - likesA;
         });
-    
+        const postLikesDiv = document.querySelectorAll('.post-likes');
+        const a = Array.from(document.querySelectorAll('.post-likes')).find(item => item.id === `UniqueValueIdentifier${data.id}`);
+
+        postLikesDiv.forEach(item => {
+            const likedId = data.attributes.likedPostMetadata ? data.attributes.likedPostMetadata.id : null;
+            if (likedId) {
+                item.setAttribute("metadata", JSON.stringify({ likedID: likedId }));
+            } else {
+            }
+        });
+
         // Remove todos os posts e adiciona na ordem correta
         postsContainer.innerHTML = '';
         allPosts.forEach(post => postsContainer.appendChild(post));
-    
+
+
+
         // Verifica se o post já foi curtido e atualiza o estado do checkbox
         const postAlreadyLiked = await this.apiClass.findLikedPost(dataa);
-        const checkbox = postElement.querySelector(`#postInputCheckId${data.id}`);
-        checkbox.checked = postAlreadyLiked;
+
+        const checkbox = document.querySelector(`#postInputCheckId${data.id}`);
+   
+        checkbox.checked = postAlreadyLiked === true ? true : false
     }
 
 }
