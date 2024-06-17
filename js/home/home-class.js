@@ -1,5 +1,7 @@
 class HomeFunctions {
     apiClass = new API();
+    identifier = new Identifier();
+
     *postsGenerator(postsArray) {
         let count = 0;
         let postsBatch = [];
@@ -29,6 +31,16 @@ class HomeFunctions {
         postElement.classList.add("post");
         postElement.setAttribute('metadata', JSON.stringify({ id: data.id, createdAt: data.createdAt, type: data.type }));
         postElement.setAttribute('data-likes', data.likes || 0);
+        const response = this.identifier.Identifier(data.content);
+        let content = ''; // Inicialize content como uma string vazia
+    
+        if(response.type == "link" && response.image == "no") {
+            content = `<a href="${data.content}">${data.content}</a>`;
+        } else if (response.type == "link" && response.image == "yes") {
+            content = `<img src="${data.content}" alt="post ${data.title} image as content">`;
+        } else {
+            content = `<p>${data.content}</p>`;
+        }
 
         const dataa = {
             author: data.author,
@@ -48,7 +60,7 @@ class HomeFunctions {
             </div>
             <div class="post-content">
                 <p class="title">${data.title}</p>
-                <p>${data.content}</p>
+                
             </div>
             <div class="post-footer">
                 <div class="post-likes" id="UniqueValueIdentifier${data.id}">
@@ -81,11 +93,13 @@ class HomeFunctions {
         const postsContainer = document.querySelector('.posts');
         postsContainer.appendChild(postElement);
 
+        const postContentContainer = postElement.querySelector(".post-content");
+        if (postContentContainer) {
+            postContentContainer.innerHTML = content;
+        }
         // Reordenar os posts com base nos likes
         const allPosts = Array.from(postsContainer.querySelectorAll('.post'));
         const postLikesDiv = document.querySelectorAll('.post-likes');
-        const a = Array.from(document.querySelectorAll('.post-likes')).find(item => item.id === `UniqueValueIdentifier${data.id}`);
-
         /*invertigar se nã9o tem a ver com o momento ou a hierarquia em que renderizo o metadata do item*/
         postLikesDiv.forEach(item => {
             const likedId = data.attributes.likedPostMetadata ? data.attributes.likedPostMetadata.id : null;
@@ -104,8 +118,8 @@ class HomeFunctions {
             const checkbox = document.querySelector(`#postInputCheckId${data.id}`);
             checkbox.checked = postAlreadyLiked == true ? true : false
         })
-
-
+        console.log("\n" + data.content + "\n\n")
+        console.log()
     }
 
 }

@@ -82,7 +82,7 @@ class API extends ENV {
                 });
 
                 const data = await response.json();
-                console.log(data)
+
                 window.location.href = "../../html/home/home.html";
             } catch (error) {
                 console.error("Erro na requisição:", error);
@@ -108,7 +108,7 @@ class API extends ENV {
         try {
             const formData = new FormData();
             formData.append('title', data.title);
-            formData.append('content', data.content); // Assumindo que data.content é um File
+            formData.append(data.content instanceof File ? 'file' : 'content', data.content);
             formData.append('userNickname', data.userNickname);
 
             const response = await fetch(`http://localhost:3000/posts/create`, {
@@ -116,9 +116,10 @@ class API extends ENV {
                 body: formData
             });
             const responseData = await response.json();
-            console.log(responseData)
+
+
             if (response.ok) {
-                // Chame a função de renderização aqui, se necessário
+                window.alert('Post feito com sucesso')
                 console.log('Post criado com sucesso');
             } else {
                 window.alert('Ops! parece que estamos com um erro em nossos servidores.\nTente novamente em alguns minutos');
@@ -235,10 +236,10 @@ class API extends ENV {
             const responseData = await response.json();
 
             if (responseData.postInfo.booleanValue == true) {
-                console.log(responseData.postInfo.booleanValue)
+
                 return true
             } else {
-                console.log(responseData.postInfo.booleanValue)
+
                 return false
             }
 
