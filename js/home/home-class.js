@@ -95,7 +95,7 @@ class HomeFunctions {
 
         const postContentContainer = postElement.querySelector(".post-content");
         if (postContentContainer) {
-            postContentContainer.innerHTML = content;
+            postContentContainer.innerHTML += content;
         }
         // Reordenar os posts com base nos likes
         const allPosts = Array.from(postsContainer.querySelectorAll('.post'));
@@ -118,8 +118,7 @@ class HomeFunctions {
             const checkbox = document.querySelector(`#postInputCheckId${data.id}`);
             checkbox.checked = postAlreadyLiked == true ? true : false
         })
-        console.log("\n" + data.content + "\n\n")
-        console.log()
+
     }
 
 }

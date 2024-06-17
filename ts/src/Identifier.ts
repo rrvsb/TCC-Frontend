@@ -1,7 +1,8 @@
 class Identifier {
     private readonly imageExtensionsList: string[] = [
         "jpg", "gif", "png", "svg", "webp", "raw", "tiff", "bmp", "pdf", "jpeg",
-        "heif", "heic", "indd", "ai", "psd", "eps", "dng", "cr2", "nef", "orf", "sr2"
+        "heif", "heic", "indd", "ai", "psd", "eps", "dng", "cr2", "nef", "orf", "sr2",
+        "aviff", "avif"
     ];
     
     
