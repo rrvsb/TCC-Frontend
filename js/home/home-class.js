@@ -57,10 +57,11 @@ class HomeFunctions {
                     <p>Anderson</p>
                     <p>@${data.author}</p>
                 </div>
+                <div class="post-options-header">
+                </div>
             </div>
             <div class="post-content">
                 <p class="title">${data.title}</p>
-                
             </div>
             <div class="post-footer">
                 <div class="post-likes" id="UniqueValueIdentifier${data.id}">
@@ -93,7 +94,13 @@ class HomeFunctions {
         const postsContainer = document.querySelector('.posts');
         postsContainer.appendChild(postElement);
 
+       
+        const postOptionsHeader = document.querySelectorAll(".post-options-header");
+        postOptionsHeader.forEach(header => {
+            header.innerHTML += '<include src="./components/post-headers-options.html" type="import"></include>'
+        })
         const postContentContainer = postElement.querySelector(".post-content");
+
         if (postContentContainer) {
             postContentContainer.innerHTML += content;
         }

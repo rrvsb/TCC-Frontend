@@ -1,6 +1,7 @@
 window.addEventListener("DOMContentLoaded", async () => {
     const nick = JSON.stringify(localStorage.getItem("userNickname"))
-    
+    const includer = new Include;
+    includer.ReadHTML("import");
     const aut = new UserAutenticator();
     aut.loginAutenticator();
 
@@ -91,3 +92,4 @@ clearButton.addEventListener("click", () => {
     postMenu.id = ""
     clearButton.style.display = "none"
 })
+
